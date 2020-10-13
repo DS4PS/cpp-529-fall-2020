@@ -31,7 +31,6 @@ projects:
   report-template:  'Friday, October 9th'
   code-through:  'Friday, October 9th'
   
-  
 ---
 
 <!--- 

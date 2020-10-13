@@ -869,6 +869,8 @@ In addition to the two coding task you must also describe your research project 
 
 You will need to delete each instance of `r lorem::ipsum(paragraphs = 1)` placeholder text in the .rmd file and provide your own answers based on the instructions contained within notes (<!---  -->).  There are ***11*** instances of latin placeholder text that you need to remove and provide answers.   
 
+<!---
+
 Once you have completed the final project, you should record a well-rehearsed presentation of 15-20 minutes targeting local government and community leaders. You may post the video on [youtube](https://www.youtube.com/upload).  When uploading to youtube, you can select the unlisted option to keep the video from being found via search, rather it can only be viewed if you have the link.
 
 

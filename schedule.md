@@ -353,7 +353,7 @@ Please submit both the .RMD file and .HTML file.
 
 
 
-## Week 3 - Identifying Neighborhood Types with Cluster Analysis
+# Week 3 - Identifying Neighborhood Types with Cluster Analysis
 
 <!--- 
 
@@ -466,7 +466,7 @@ Image 2:
 -->
 
 
-## Week 4 - More Practice Clustering 
+# Week 4 - More Practice Clustering 
 
 
 <!--- 
@@ -579,7 +579,7 @@ You may access Lab 4 instructions by clicking on the LAB-04 Instructions below.
 -->
 
 
-## Week 5 - Visualizing Neighborhood Changes  
+# Week 5 - Visualizing Neighborhood Changes  
 
 
 <!---
@@ -687,7 +687,7 @@ Please submit your .rmd and .html files for Part 3 of the lab only, including yo
 
 
 
-## Week 6 - OLS Regression and Models of Neighborhood Change 
+# Week 6 - OLS Regression and Models of Neighborhood Change 
 
 
 <!---
@@ -811,7 +811,7 @@ Please submit your .rmd and .html files on Canvas, including your answers to the
 -->
 
 
-## Week 7 - Final Project 
+# Week 7 - Final Project 
 
 <!--- 
 

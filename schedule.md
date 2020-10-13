@@ -225,7 +225,7 @@ FOR REFERENCE:
 
 **Lab-01 - Measurement**
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/lab-01-instructions/">LAB-01 Instructions</a>
+<a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
 **Submit Solutions to Canvas:**
 

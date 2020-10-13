@@ -135,6 +135,13 @@ All three articles share a common approach of using census data and clustering t
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l1LMI1mMwe4?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
 
 
 
@@ -151,7 +158,6 @@ All three articles share a common approach of using census data and clustering t
 
 
 # Unit 1 - Measurement & The Theory of Neighborhoods
-
 
 
 

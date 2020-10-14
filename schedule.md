@@ -219,6 +219,8 @@ FOR REFERENCE:
 
 ## Lab 01
 
+**Due {{page.labs.lab-01}}**
+
 **Brief Video Instruction****
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -231,6 +233,15 @@ FOR REFERENCE:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
+
+
+## YellowDig Topic 
+
+**Post by {{page.yellowdig.post-01}}**
+
+Introduce yourself to the class via YellowDig. 
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 
 <br>
@@ -255,8 +266,6 @@ FOR REFERENCE:
 ####
 ######################################################
 -->
-
-
 
 
 # Week 2 - Intro to Census Data and Mapping
@@ -309,19 +318,12 @@ The data collected by the decennial census are used to determine the number of s
 
 <br> 
 
-## YellowDig Topic
 
-> For your discussion topic this week, please read and provide general reflection based on the following  two articles [article 1](https://gcn.com/articles/2018/02/12/local-gov-correct-census-addresses.aspx) and [article 2](https://www.amacad.org/news/2020-census-unprecedented-challenges-their-implications).  Discuss also what are some of the challenges faced and new innovations adopted by federal and state governments to ensure an accurate census. 
-
-
-**Please post your reflection as a new pin on [YellowDig](https://canvas.asu.edu/courses/37703/assignments/842344).**
-
-<br>
 
 
 ## Lab 02 
 
-**Due {{page.labs.lab-01}}**
+**Due {{page.labs.lab-02}}**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CLMEqpf_3Xo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -339,6 +341,23 @@ Please submit both the .RMD file and .HTML file.
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
+
+## YellowDig Topic
+
+**Due {{page.yellowdig.post-02}}**
+
+> For your discussion topic this week, please read and provide general reflection based on the following  two articles [article 1](https://gcn.com/articles/2018/02/12/local-gov-correct-census-addresses.aspx) and [article 2](https://www.amacad.org/news/2020-census-unprecedented-challenges-their-implications).  Discuss also what are some of the challenges faced and new innovations adopted by federal and state governments to ensure an accurate census. 
+
+Please post your reflection as a new pin on YellowDig:
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+
+
+
+<br>
+<br>
+<hr>
 <br>
 <br>
 

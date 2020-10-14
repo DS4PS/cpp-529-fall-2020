@@ -311,14 +311,6 @@ Florida, R. (2018). Where the House-Price-to-Income Ratio Is Most Out of Whack. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qScoFj5ifTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-**Discussion Assignment: How local governments ensure an accurate census**
-
-Every 10 years, the U.S. Census Bureau conducts a census to determine the number of people living in the United States. 
-The data collected by the decennial census are used to determine the number of seats each state has in the U.S. House of Representatives as well as used to inform federal spending and other important federal and state functions.  The task of the census is simple to state yet difficult to execute: count everyone once (no undercount), only once (no overcount), and in the right place (no location errors).
-
-<br> 
-
-
 
 
 ## Lab 02 
@@ -331,9 +323,7 @@ The data collected by the decennial census are used to determine the number of s
 
 Download the Rmarkdown file (.RMD) below.  In steps 1-4, you can input your R code chunk in the areas that say ``#edit me``.  In Questions 1-3, you can simply answer the questions (i.e. you do not need to show or include any additional code needed to answer the questions).  
 
-
 Access Lab 2 here: [RMD](https://ds4ps.org/cpp-529-master/labs/Lab2.Rmd) 
-
 
 Please submit both the .RMD file and .HTML file.
 
@@ -342,9 +332,17 @@ Please submit both the .RMD file and .HTML file.
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 
+
+
 ## YellowDig Topic
 
 **Due {{page.yellowdig.post-02}}**
+
+**How local governments ensure an accurate census**
+
+Every 10 years, the U.S. Census Bureau conducts a census to determine the number of people living in the United States. 
+
+The data collected by the decennial census are used to determine the number of seats each state has in the U.S. House of Representatives as well as used to inform federal spending and other important federal and state functions.  The task of the census is simple to state yet difficult to execute: count everyone once (no undercount), only once (no overcount), and in the right place (no location errors).
 
 > For your discussion topic this week, please read and provide general reflection based on the following  two articles [article 1](https://gcn.com/articles/2018/02/12/local-gov-correct-census-addresses.aspx) and [article 2](https://www.amacad.org/news/2020-census-unprecedented-challenges-their-implications).  Discuss also what are some of the challenges faced and new innovations adopted by federal and state governments to ensure an accurate census. 
 

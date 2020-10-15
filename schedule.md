@@ -447,9 +447,13 @@ Other format:
 
 {% assign days = 7 | times: 86400 %}
 
-{{ "now" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
+{{ "now" | date: "%s" | plus:days | date: "%Y, %m, %-d" }}
 
 {{ "March 14, 2016" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
+
+{{ "now" |  date: "%Y, %m, %-d" }}
+
+
 
 <!--- 
 ######################################################

@@ -17,10 +17,10 @@ info:
  course_start_end_dates: Oct 12 to Dec 04, 2020  
  course_prerequisites:  
  class_meets_when:  Asynchronous  
- class_meets_where:  ''
- review_sessions_when: 'Tues/Thurs 2-3pm AZ'
+ class_meets_where:  'https://asu.zoom.us/j/93504639301'
+ review_sessions_when: 'Tues 5pm AZ'
  review_sessions_where: 'Virtual Office Hours Only'
- discussion_board_url: 'https://ds4ps.org/cpp-529-master/help/'
+ discussion_board_url: 'https://ds4ps.github.io/cpp-529-fall-2020/help/'
 
 instructor:
 -  name: Jesse Lecy, PhD
@@ -33,7 +33,7 @@ instructor:
    scholar_url: 'https://scholar.google.com/citations?user=Ir8H4wMAAAAJ&hl=en&oi=ao'
    linked_in_url:
    office_hours_time: Flexible
-   office_hours_location:  Zoom or Office
+   office_hours_location:  Zoom 
    office_hours_app_url:  ''
    
   

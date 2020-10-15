@@ -69,15 +69,17 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 
 
 {% assign week = 1 %}
-{% assign week-in-seconds = 7 | times:24 | times:60 | time:60 %}
-{{ week-in-seconds }}
-{{ lab-start }}
-{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
-{{ lab-start | date: "%s" | plus: week-in-seconds | date: ""%a, %b %d" }}
+{% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
+{{ time-in-seconds }}
+{{ lab-start | date: ""%a, %b %d" }}
+Next week: 
+{{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
 
 
+Week 2: 
 {% assign week = 2 %}
-{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
+{% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
+{{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
 
 
 

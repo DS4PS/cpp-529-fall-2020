@@ -318,6 +318,10 @@ This unit will teach students how to resolve both problems, as well as learn map
 
 The lecture notes accompanying the videos can be found at the following links: [HTML](https://ds4ps.org/cpp-529-master/lectures/MappingIntro.html#/)
   
+<br>
+<hr>
+<br>
+
 
 ## Assigned Reading
 
@@ -325,34 +329,62 @@ REQUIRED:
 
 Florida, R. (2018). Where the House-Price-to-Income Ratio Is Most Out of Whack. [Citylab report](https://www.citylab.com/equity/2018/05/where-the-house-price-to-income-ratio-is-most-out-of-whack/561404/)
 
+<br>
+<hr>
+<br>
 
 
 ## Lecture Material 
 
 **Introduction to Census Data**
 
+<br>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9722ZtZ1v1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**"Introduction to Mapping**
+<br>
+<br>
+
+**Introduction to Mapping**
+
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/peSI3dQ1Bbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
+<br>
+
+
 **Mapping Census Data in R**
+
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Jys5nZFRf28" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
+<br>
+
+
 **Mapping Census Data in R w/ TidyCensus**
+
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qScoFj5ifTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-
+<br>
+<hr>
+<br>
 
 ## Lab 02 
 
-**Due {{page.labs.lab-02}}**
+> Due {{page.labs.lab-02}}
+
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CLMEqpf_3Xo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br> 
 
 **Lab Instructions**
 
@@ -362,11 +394,16 @@ Access Lab 2 here: [RMD](https://ds4ps.org/cpp-529-master/labs/Lab2.Rmd)
 
 Please submit both the .RMD file and .HTML file.
 
+
 **Submit Solutions to Canvas:**
+
+**Due {{page.labs.lab-02}}**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
-
+<br>
+<hr>
+<br>
 
 
 ## YellowDig Topic

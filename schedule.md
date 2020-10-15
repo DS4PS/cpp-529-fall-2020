@@ -67,7 +67,7 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 ####      COURSE OVERVIEW
 ####
 ######################################################
-
+-->
 
 # Course Overview
 

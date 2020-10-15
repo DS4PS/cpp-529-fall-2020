@@ -193,6 +193,11 @@ On your lab you will be practicing with index development using census data and 
 
 [https://jdlecy.shinyapps.io/measurement-lab/#section-warmup](https://jdlecy.shinyapps.io/measurement-lab/#section-warmup) 
 
+<br>
+<hr>
+<br>
+
+
 
 ## Assigned Reading
 
@@ -217,11 +222,17 @@ FOR REFERENCE:
 *MacKenzie, S. B., Podsakoff, P. M., & Podsakoff, N. P. (2011). Construct measurement and validation procedures in MIS and behavioral research: Integrating new and existing techniques. MIS quarterly, 35(2), 293-334.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/construct-measurement-and-validation-in-behavioral-research.pdf) ]
 
 
+
+<br>
+<hr>
+<br>
+
+
+
 ## Lab 01
 
 **Due {{page.labs.lab-01}}**
 
-**Brief Video Instruction****
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -232,6 +243,12 @@ FOR REFERENCE:
 **Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+
+<br>
+<hr>
+<br>
+
 
 
 

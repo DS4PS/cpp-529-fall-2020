@@ -129,6 +129,7 @@ All three articles share a common approach of using census data and clustering t
 ![](assets/img/strong-transitional-distressed-hoods.png) 
 
 
+<br>
 
 ## Course Structure
 
@@ -201,19 +202,19 @@ On your lab you will be practicing with index development using census data and 
 
 ## Assigned Reading
 
-REQUIRED:
+**Required:**
 
 Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media. [ [2-page PDF](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/introduction-to-construct-measurement.pdf) ] 
 
 *Pitkin, B. (2001). Theories of neighborhood change: Implications for community development policy and practice. UCLA Advanced Policy Institute, 28.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/theories-of-neighborhood-change.pdf) ]
 
-FOR REFERENCE:
+**For Reference:**
 
-**Impact of Neighborhoods on Families**
+IMPACT OF NEIGHBORHOODS ON FAMILIES
 
 *Ellen, I. G., & Turner, M. A. (1997). Does neighborhood matter? Assessing recent evidence. Housing Policy Debate, 8(4), 833-866.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/social-mobility/does-neighborhood-matter-assessing-recent-evidence.pdf) ]
 
-**Measurement Theory**
+MEASUREMENT THEORY 
 
 *Measurement Theory and Practice, from: Smith, F. (2002). Research methods in pharmacy practice. Pharmaceutical Press.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/measurement-theory-and-practice.pdf) ]
 
@@ -221,26 +222,28 @@ FOR REFERENCE:
 
 *MacKenzie, S. B., Podsakoff, P. M., & Podsakoff, N. P. (2011). Construct measurement and validation procedures in MIS and behavioral research: Integrating new and existing techniques. MIS quarterly, 35(2), 293-334.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/construct-measurement-and-validation-in-behavioral-research.pdf) ]
 
-
-
 <br>
 <hr>
 <br>
 
 
 
-## Lab 01
+## Lab 01 - Measurement 
 
 **Due {{page.labs.lab-01}}**
 
+<hr> 
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Lab-01 - Measurement**
+<br>
+<hr>
+
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
-**Submit Solutions to Canvas:**
+<br> 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 

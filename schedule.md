@@ -7,6 +7,9 @@ canvas:
 
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
+lab-start: 'Wednesday, Oct 21st' 
+
+yellowdig-start: 'Saturday, Oct 17th' 
 
 yellowdig: 
   post-01: 'Saturday, Oct 17th'
@@ -38,14 +41,19 @@ projects:
 Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 -->
 
-{% assign days = 7 | times: 86400 %}
-{{ "October 17, 2020" | date: "%s" | plus: days | date: "%D, %Y, %m" }}
-{{ "October 17, 2020" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
+{% assign week = 1 %}
+{% assign week-in-seconds = 7 | times:24 | times:60 | time:60 %}
+{{ week-in-seconds }}
+{{ lab-start }}
+{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
 
-
+{% assign week = 1 %}
+{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
 
 <div class = "uk-container uk-container-small">
-  
+ 
+
+ 
 <br><br>
 <br><br>
 
@@ -413,7 +421,7 @@ Please submit both the .RMD file and .HTML file.
 
 ## YellowDig Topic
 
-**Due {{ page.yellowdig.post-02 | date: "%s" | plus: days | date: "%Y, %m, %-d" }}**
+**Due {{ yellowdig-start | date: "%s" | plus: days | date: "%a, %b %d" }}**
 
 **How local governments ensure an accurate census**
 

@@ -7,14 +7,10 @@ canvas:
 
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
-{% assign days = 7 | times: 86400 %}
-{{ "October 17, 2020" | date: "%s" | plus: days | date: "%D, %Y, %m" }}
-{{ "October 17, 2020" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
-
 
 yellowdig: 
   post-01: 'Saturday, Oct 17th'
-  post-02: {{ "October 17, 2020" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
+  post-02: 'Saturday, Oct 24th'
   post-03: 'Monday, Sept 7th' 
   post-04: 'Monday, Sept 14th' 
   post-05: 'Monday, Sept 21st' 
@@ -42,7 +38,7 @@ projects:
 Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 -->
 
-
+{% assign days = 7 | times: 86400 %}
 {{ "October 17, 2020" | date: "%s" | plus: days | date: "%D, %Y, %m" }}
 {{ "October 17, 2020" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
 

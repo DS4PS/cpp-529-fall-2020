@@ -267,7 +267,9 @@ alpha = var(T) / var( T + e )
 
 Alpha is a "signal to error" ratio that tells us how reliable our observed measure will be in capturing the true level of the latent construct. 
 
-Measures like weight or height only require one measurement. Instruments that are designed to measure latent constructs often use multiple measurements that can be helpful in triangulating the underlying construct. For example, all of the verbal reasoning questions on an exam might be combined into a single reading comprehension score. Responses on multiple survey items might be combined into a single index. In these cases each **item** can be decomposed into a component X that accurately captures the latent construct a component **e** which represents random noise or measurement error. 
+Measures like weight or height only require one measurement. Instruments that are designed to measure latent constructs often use multiple measurements that can be helpful in triangulating the underlying construct. For example, all of the verbal reasoning questions on an exam might be combined into a single reading comprehension score. Responses on multiple survey items might be combined into a single index. 
+
+In these cases each **item** can be decomposed into a component X that accurately captures the latent construct and a component **e** which represents random noise or measurement error. 
 
 ```
 item1 = X1 + e1

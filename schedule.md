@@ -247,21 +247,53 @@ MEASUREMENT THEORY
 
 **Lab Instructions:**
 
-Measurement theory states defines quantitative measures of latent constructs as: 
+Measurement theory defines quantitative measures of latent constructs as: 
 
 ```
 M = T + e
 ```
 
-Where M represents the measurement, T represents the *true* score, and **e** represents random error. 
+Where M represents the observed measurement (the recorded scores on an IQ test), T represents the *true* scores (each individuals actual intelligence quotion relative to the population), and **e** represents random error. 
 
-Reliability is then the ratio of the variance of the true score to the variance of the true score plus measurement error. 
+Reliability is then the ratio of the variance of the true scores to the variance of the true scores plus measurement error. Note that M, T, and e are vectors of scores. 
 
 ```
 alpha = var(T) / var( T + e )
 ```
 
 Alpha is a "signal to error" ratio that tells us how reliable our observed measure will be in capturing the true level of the latent construct. 
+
+Measures like weight or height only require one measurement. Instruments that are designed to measure latent constructs often use multiple measurements that can be helpful in triangulating the underlying construct. For example, all of the verbal reasoning questions on an exam might be combined into a single reading comprehension score. Responses on multiple survey items might be combined into a single index. In these cases each **item** can be decomposed into a component X that accurately captures the latent construct a component **e** which represents random noise or measurement error. 
+
+```
+item1 = X1 + e1
+```
+
+The index or scale constructed from three items is thus the average of multiple measures: 
+
+```
+index = T + e 
+where: 
+T = X1 + X2 + X3  
+e = e1 + e2 + e3
+```
+
+The reliability of the index or scale would thus be measured in exactly the same way: *alpha = signal / ( signal + noise )*
+
+```
+alpha = var(T) / var( T + e )
+```
+
+This holds even when the index is constructed as an average of individual measures to preserve scale. For example, if three appraisers are hired to assess the value of a painting using slightly different methods then it would not make sense to construct a composite value by adding the three individual appraisals. They would be averaged. 
+
+```
+index = ( T + e ) / 3  
+```
+
+*Under reasonable assumptions the alpha of an index created by summing item scores would be the same as the alpha of an index created by averaging item scores.* 
+
+Your task on Lab 01 will be to create a new measure of neighborhood health by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
+
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 

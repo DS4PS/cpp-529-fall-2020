@@ -41,14 +41,7 @@ projects:
 Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 -->
 
-{% assign week = 1 %}
-{% assign week-in-seconds = 7 | times:24 | times:60 | time:60 %}
-{{ week-in-seconds }}
-{{ lab-start }}
-{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
 
-{% assign week = 1 %}
-{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
 
 <div class = "uk-container uk-container-small">
  
@@ -75,8 +68,16 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 
 
 
- 
+{% assign week = 1 %}
+{% assign week-in-seconds = 7 | times:24 | times:60 | time:60 %}
+{{ week-in-seconds }}
+{{ lab-start }}
+{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
+{{ lab-start | date: "%s" | plus: week-in-seconds | date: ""%a, %b %d" }}
 
+
+{% assign week = 2 %}
+{{ lab-start | date: "%s" | plus: week-in-seconds | times:week | date: ""%a, %b %d" }}
 
 
 

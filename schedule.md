@@ -247,13 +247,37 @@ MEASUREMENT THEORY
 
 **Lab Instructions:**
 
-Read: Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media. [[2-page PDF](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/introduction-to-construct-measurement.pdf)]
+Measurement theory states defines quantitative measures of latent constructs as: 
+
+```
+M = T + e
+```
+
+Where M represents the measurement, T represents the *true* score, and **e** represents random error. 
+
+Reliability is then the ratio of the variance of the true score to the variance of the true score plus measurement error. 
+
+```
+alpha = var(T) / var( T + e )
+```
+
+Alpha is a "signal to error" ratio that tells us how reliable our observed measure will be in capturing the true level of the latent construct. 
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 **Due {{page.labs.lab-01}}**
+
+For additional background material on reliability see:
+
+*Kimberlin, C. L., & Winterstein, A. G. (2008). Validity and reliability of measurement instruments used in research. American journal of health-system pharmacy, 65(23), 2276-2284.* [[pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/reliabillity-and-validity-of-measures.pdf)]
+
+Or the "Reliability" section of: 
+
+*Measurement Theory and Practice, from: Smith, F. (2002). Research methods in pharmacy practice. Pharmaceutical Press.* [[pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/measurement-theory-and-practice.pdf)]
+
+
 
 <br>
 <hr>

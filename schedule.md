@@ -68,20 +68,30 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 
 
 
-{% assign week = 1 %}
-{% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
-{{ time-in-seconds }}
-{{ lab-start | date: ""%a, %b %d" }}
+{% assign week = 1 %} 
+{% assign time-in-seconds = week | times:7 | times:24 | times:60 | times:60 | minus:604800 %} 
+{{ time-in-seconds }} 
+{{ lab-start | date: "%a, %b %d" }} 
 
 Next week: 
-{{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
+{{ lab-start | date: "%s" | plus: time-in-seconds | date: "%a, %b %d" }} 
 
 
 Week 2: 
+{% assign week = 2 %} 
 <!--- ADD ONE WEEK TO THE LAB START DATE  -->
-{% assign week = 2 %}
-{% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
-{{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
+{% assign time-in-seconds = week | times:7 | times:24 | times:60 | times:60 | minus:604800 %} 
+{% assign due-date = lab-start | date: "%s" | plus:time-in-seconds %}
+{{ due-date | date: "%A, %b %d" }} 
+
+{% assign d = due-date | date: "%d" %}
+{{ due-date | date: "%A, %b" }} {% case d %}
+  {% when '1' or '21' or '31' %}{{ d }}st, 
+  {% when '2' or '22' %}{{ d }}nd, 
+  {% when '3' or '23' %}{{ d }}rd, 
+  {% else %}{{ d }}th, {% endcase %}{{ due-date | date: "%Y" }} 
+
+
 
 
 
@@ -426,8 +436,6 @@ Please submit both the .RMD file and .HTML file.
 
 ## YellowDig Topic
 
-**Due {{ yellowdig-start | date: "%s" | plus: 604800 | date: "%a, %b %d" }}**
-
 **How local governments ensure an accurate census**
 
 Every 10 years, the U.S. Census Bureau conducts a census to determine the number of people living in the United States. 
@@ -440,6 +448,7 @@ Please post your reflection as a new pin on YellowDig:
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
+**Post by {{page.yellowdig.post-02}}**
 
 
 
@@ -451,23 +460,7 @@ Please post your reflection as a new pin on YellowDig:
 
 
 
-<!--- 
-{{ "March 14, 2016" | date: "%b %d, %y" }}
 
-{{ "March 14, 2016" + 7 | date: "%b %d, %y" }}
-
-{{ "March 14, 2016" | date: "%b %d, %y" | plus: 604800 }}
-
-Other format: 
-
-{% assign days = 7 | times: 86400 %}
-
-{{ "now" | date: "%s" | plus:days | date: "%Y, %m, %-d" }}
-
-{{ "March 14, 2016" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
-
-{{ "now" |  date: "%Y, %m, %-d" }}
--->
 
 
 <!--- 

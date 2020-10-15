@@ -7,9 +7,9 @@ canvas:
 
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
-lab-start: 'Wednesday, Oct 21st' 
+lab-start: 'October 21, 2020' 
 
-yellowdig-start: 'Saturday, Oct 17th' 
+yellowdig-start: 'October 17, 2020'  
 
 yellowdig: 
   post-01: 'Saturday, Oct 17th'

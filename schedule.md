@@ -274,12 +274,13 @@ Read: Schäffer, U. (2007). Management accounting & control scales handbook. Spr
 
 ## YellowDig Topic 
 
-**Post by {{page.yellowdig.post-01}}**
-
 Introduce yourself to the class via YellowDig. 
+
+Which program or certificate are you part of? Tell us a little about yourself and your career interests in evaluation and analytics. 
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
+**Post by {{page.yellowdig.post-01}}**
 
 <br>
 <br>

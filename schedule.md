@@ -7,10 +7,6 @@ canvas:
 
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
-lab-start: '2020-10-21' 
-
-yellowdig-start: 'October 17, 2020'  
-
 yellowdig: 
   post-01: 'Saturday, Oct 17th'
   post-02: 'Saturday, Oct 24th'
@@ -60,37 +56,6 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 -----------------------
 
 <br>
-
-
-
-
-
-
-
-
-{% assign week = 1 %} 
-{% assign time-in-seconds = week | times:7 | times:24 | times:60 | times:60 | minus:604800 %} 
-{{ time-in-seconds }} 
-{{ lab-start | date: "%a, %b %d" }} 
-
-Next week: 
-{{ lab-start | date: "%s" | plus: time-in-seconds | date: "%a, %b %d" }} 
-
-
-Week 2: 
-{% assign week = 2 %} 
-<!--- ADD ONE WEEK TO THE LAB START DATE  -->
-{% assign time-in-seconds = week | times:7 | times:24 | times:60 | times:60 | minus:604800 %} 
-{% assign due-date = lab-start | date: "%s" | plus:time-in-seconds %}
-{{ due-date | date: "%A, %b %d" }} 
-
-{% assign d = due-date | date: "%d" %}
-{{ due-date | date: "%A, %b" }} {% case d %}
-  {% when '1' or '21' or '31' %}{{ d }}st, 
-  {% when '2' or '22' %}{{ d }}nd, 
-  {% when '3' or '23' %}{{ d }}rd, 
-  {% else %}{{ d }}th, {% endcase %}{{ due-date | date: "%Y" }} 
-
 
 
 

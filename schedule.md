@@ -417,7 +417,7 @@ Please submit both the .RMD file and .HTML file.
 
 ## YellowDig Topic
 
-**Due {{page.yellowdig.post-02}}**
+**Due {{ page.yellowdig.post-02 | date: "%s" | plus: days | date: "%Y, %m, %-d" }}**
 
 **How local governments ensure an accurate census**
 
@@ -442,7 +442,7 @@ Please post your reflection as a new pin on YellowDig:
 
 
 
-
+<!--- 
 {{ "March 14, 2016" | date: "%b %d, %y" }}
 
 {{ "March 14, 2016" + 7 | date: "%b %d, %y" }}
@@ -458,7 +458,7 @@ Other format:
 {{ "March 14, 2016" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
 
 {{ "now" |  date: "%Y, %m, %-d" }}
-
+-->
 
 
 <!--- 

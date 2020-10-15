@@ -437,9 +437,19 @@ Please post your reflection as a new pin on YellowDig:
 
 
 
+{{ "March 14, 2016" | date: "%b %d, %y" }}
 
+{{ "March 14, 2016" + 7 | date: "%b %d, %y" }}
 
+{{ "March 14, 2016" | date: "%b %d, %y" | plus: 604800 }}
 
+Other format: 
+
+{% assign days = 7 | times: 86400 %}
+
+{{ "now" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
+
+{{ "March 14, 2016" | date: "%s" | plus: days | date: "%Y, %m, %-d" }}
 
 <!--- 
 ######################################################

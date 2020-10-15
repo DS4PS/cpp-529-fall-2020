@@ -72,11 +72,13 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 {% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
 {{ time-in-seconds }}
 {{ lab-start | date: ""%a, %b %d" }}
+
 Next week: 
 {{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
 
 
 Week 2: 
+<!--- ADD ONE WEEK TO THE LAB START DATE  -->
 {% assign week = 2 %}
 {% assign time-in-seconds = week | times:7 | times:24 | times:60 | time:60 | minus:604800 %}
 {{ lab-start | date: "%s" | plus: time-in-seconds | date: ""%a, %b %d" }}
@@ -90,7 +92,7 @@ Week 2:
 ####      COURSE OVERVIEW
 ####
 ######################################################
--->
+
 
 # Course Overview
 
@@ -424,7 +426,7 @@ Please submit both the .RMD file and .HTML file.
 
 ## YellowDig Topic
 
-**Due {{ yellowdig-start | date: "%s" | plus: days | date: "%a, %b %d" }}**
+**Due {{ yellowdig-start | date: "%s" | plus: 604800 | date: "%a, %b %d" }}**
 
 **How local governments ensure an accurate census**
 

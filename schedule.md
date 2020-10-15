@@ -245,23 +245,25 @@ MEASUREMENT THEORY
 
 ## Lab 01 - Measurement 
 
-**Due {{page.labs.lab-01}}**
+> Due {{page.labs.lab-01}}
 
-<hr> 
 <br>
+<hr> 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
 <hr>
+<br>
 
+**Lab Instructions:**
+
+Read: Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media. [[2-page PDF](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/introduction-to-construct-measurement.pdf)]
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
-<br> 
-
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
+**Due {{page.labs.lab-01}}**
 
 <br>
 <hr>

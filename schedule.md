@@ -8,8 +8,8 @@ canvas:
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
 yellowdig: 
-  post-01: 'Saturda, Oct 17th'
-  post-02: 'Saturda, Oct 24th' 
+  post-01: 'Saturday, Oct 17th'
+  post-02: 'Saturday, Oct 24th' 
   post-03: 'Monday, Sept 7th' 
   post-04: 'Monday, Sept 14th' 
   post-05: 'Monday, Sept 21st' 

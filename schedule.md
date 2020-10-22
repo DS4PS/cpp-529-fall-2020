@@ -459,7 +459,7 @@ Florida, R. (2018). Where the House-Price-to-Income Ratio Is Most Out of Whack. 
 
 Download the Rmarkdown file (.RMD) below.  In steps 1-4, you can input your R code chunk in the areas that say ``#edit me``.  In Questions 1-3, you can simply answer the questions (i.e. you do not need to show or include any additional code needed to answer the questions).  
 
-[Lab 2 RMD](https://raw.githubusercontent.com/DS4PS/cpp-529-fall-2020/main/LABS/lab-02-template.rmd) *right-click and save*
+[Lab 2 RMD](https://raw.githubusercontent.com/DS4PS/cpp-529-fall-2020/main/LABS/lab-02-template.rmd) *right-click and save as an RMD file*
 
 Please submit both the .RMD file and .HTML file.
 

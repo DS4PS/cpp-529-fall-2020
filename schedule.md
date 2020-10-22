@@ -383,13 +383,6 @@ In general, data scientists using R often run into two problems related to this 
 
 This unit will teach students how to resolve both problems, as well as learn mapping tools to effectively transform raw census data into visually appealing choropleth (i.e. color-coded) maps.   This unit includes 4 videos: (1) introduction to Census and Census data; (2) Introduction to Mapping; (3) Mapping Census Data in R; and (4) Mapping Census Data in R with TidyCensus. 
 
-The lecture notes accompanying the videos can be found at the following links: [HTML](https://ds4ps.org/cpp-529-master/lectures/MappingIntro.html#/)
-  
-<br>
-<hr>
-<br>
-
-
 ## Assigned Reading
 
 REQUIRED:
@@ -402,6 +395,12 @@ Florida, R. (2018). Where the House-Price-to-Income Ratio Is Most Out of Whack. 
 
 
 ## Lecture Material 
+
+**Lecture Notes**
+
+<a class="uk-button uk-button-default" href="../lectures/MappingIntro.html">SLIDES</a>
+
+<br>
 
 **Introduction to Census Data**
 

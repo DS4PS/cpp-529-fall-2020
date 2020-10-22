@@ -215,41 +215,6 @@ On your lab you will be practicing with index development using census data and 
 
 Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media. [ [2-page PDF](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/introduction-to-construct-measurement.pdf) ] 
 
-*Pitkin, B. (2001). Theories of neighborhood change: Implications for community development policy and practice. UCLA Advanced Policy Institute, 28.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/theories-of-neighborhood-change.pdf) ]
-
-**For Reference:**
-
-IMPACT OF NEIGHBORHOODS ON FAMILIES
-
-*Ellen, I. G., & Turner, M. A. (1997). Does neighborhood matter? Assessing recent evidence. Housing Policy Debate, 8(4), 833-866.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/social-mobility/does-neighborhood-matter-assessing-recent-evidence.pdf) ]
-
-MEASUREMENT THEORY 
-
-*Measurement Theory and Practice, from: Smith, F. (2002). Research methods in pharmacy practice. Pharmaceutical Press.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/measurement-theory-and-practice.pdf) ]
-
-*Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media.* [ [full text](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/Management-Accounting-and-Control-Scales-Handbook.pdf) ]
-
-*MacKenzie, S. B., Podsakoff, P. M., & Podsakoff, N. P. (2011). Construct measurement and validation procedures in MIS and behavioral research: Integrating new and existing techniques. MIS quarterly, 35(2), 293-334.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/construct-measurement-and-validation-in-behavioral-research.pdf) ]
-
-<br>
-<hr>
-<br>
-
-
-
-## Lab 01 - Measurement 
-
-> Due {{page.labs.lab-01}}
-
-<br>
-<hr> 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<hr>
-<br>
-
-**Lab Instructions:**
 
 Measurement theory defines quantitative measures of latent constructs as: 
 
@@ -298,7 +263,47 @@ index = ( T + e ) / 3
 
 *Under reasonable assumptions the alpha of an index created by summing item scores would be the same as the alpha of an index created by averaging item scores.* 
 
-Your task on Lab 01 will be to create a new measure of neighborhood health by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
+
+**For Reference:**
+
+MEASUREMENT THEORY 
+
+*Measurement Theory and Practice, from: Smith, F. (2002). Research methods in pharmacy practice. Pharmaceutical Press.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/measurement-theory-and-practice.pdf) ]
+
+*Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media.* [ [full text](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/Management-Accounting-and-Control-Scales-Handbook.pdf) ]
+
+*MacKenzie, S. B., Podsakoff, P. M., & Podsakoff, N. P. (2011). Construct measurement and validation procedures in MIS and behavioral research: Integrating new and existing techniques. MIS quarterly, 35(2), 293-334.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/construct-measurement-and-validation-in-behavioral-research.pdf) ]
+
+<br>
+<hr>
+<br>
+
+
+
+## Lab 01 - Measurement 
+
+> Due {{page.labs.lab-01}}
+
+<br>
+<hr> 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xKV8QPtH52w?start=8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr>
+<br>
+
+**Lab Instructions:**
+
+
+To get you started, skim the following articles in order to get some background information on the study of neighborhood change (decline or revitalization after decline). These studies will help you think about ways in which you might measure neighborhood vitality. 
+
+IMPACT OF NEIGHBORHOODS ON FAMILIES
+
+*Pitkin, B. (2001). Theories of neighborhood change: Implications for community development policy and practice. UCLA Advanced Policy Institute, 28.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/theories-of-neighborhood-change.pdf) ]
+
+*Ellen, I. G., & Turner, M. A. (1997). Does neighborhood matter? Assessing recent evidence. Housing Policy Debate, 8(4), 833-866.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/social-mobility/does-neighborhood-matter-assessing-recent-evidence.pdf) ]
+
+Your task on Lab 01 will be to create a new **measure of neighborhood health** by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
@@ -306,9 +311,11 @@ Your task on Lab 01 will be to create a new measure of neighborhood health by id
 
 **Due {{page.labs.lab-01}}**
 
-For additional background material on reliability see:
+The lab uses a custom shiny app and does not require coding. But if you are interested in the behind-the-scenes mechanics see: 
 
 [Tutorial on Building an Index](https://ds4ps.org/cpp-528-spr-2020/labs/lab-02-tutorial.html)
+
+For additional background material on creliability see:
 
 *Kimberlin, C. L., & Winterstein, A. G. (2008). Validity and reliability of measurement instruments used in research. American journal of health-system pharmacy, 65(23), 2276-2284.* [[pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/reliabillity-and-validity-of-measures.pdf)]
 

@@ -300,7 +300,6 @@ index = ( T + e ) / 3
 
 Your task on Lab 01 will be to create a new measure of neighborhood health by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
 
-
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
@@ -308,6 +307,8 @@ Your task on Lab 01 will be to create a new measure of neighborhood health by id
 **Due {{page.labs.lab-01}}**
 
 For additional background material on reliability see:
+
+[Tutorial on Building an Index](https://ds4ps.org/cpp-528-spr-2020/labs/lab-02-tutorial.html)
 
 *Kimberlin, C. L., & Winterstein, A. G. (2008). Validity and reliability of measurement instruments used in research. American journal of health-system pharmacy, 65(23), 2276-2284.* [[pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/reliabillity-and-validity-of-measures.pdf)]
 

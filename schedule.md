@@ -307,9 +307,13 @@ Your task on Lab 01 will be to create a new **measure of neighborhood health** b
 
 <a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
+<hr>
+
+**Due on {{page.labs.lab-01}}**
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
-**Due {{page.labs.lab-01}}**
+<hr>
 
 The lab uses a custom shiny app and does not require coding. But if you are interested in the behind-the-scenes mechanics see: 
 
@@ -1089,6 +1093,10 @@ article {
 }
 em {
   color: black !important;
+}
+
+.uk-button-primary {
+    background-color: #26b8ef;
 }
 </style>
 

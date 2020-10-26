@@ -517,17 +517,14 @@ Please post your reflection as a new pin on YellowDig:
 
 # Week 3 - Identifying Neighborhood Types with Cluster Analysis
 
-<!--- 
+## Unit Overview
 
-*** { @unit = "", @title = "Unit Overview", @foldout  }
+**Description**
 
-## Description 
+In this unit, we will be learning how to implement cluster analysis in R as a data reduction technique.  We will classify census tracts in the Pheonix area into groups (or neighborhoods) that can be defined on the basis of certain characteristics.  
 
-In this unit, we will be learning how to implement cluster analysis in R as a data reduction technique.  We will classify census tracts in the Pheonix area into group (or neighborhoods) that can be defined on the basis of certain characteristics.  Before we get into the application portion of this unit, it is important to first understand what is cluster analysis and what are some common methods and applications. 
 
 ## Assigned Reading 
-
-Required: 
 
 *Temkin, K., & Rohe, W. (1996). Neighborhood change and urban policy. Journal of planning education and research, 15(3), 159-170.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/neighborhood-change-and-urban-policy.pdf) ]
 
@@ -536,11 +533,15 @@ Required:
 *Schwirian, K. P. (1983). Models of neighborhood change. Annual review of Sociology, 9(1), 83-102.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/models-of-neighborhood-change.pdf) ]
 
 
-*** { @unit = "", @title = "Cluster Analysis: Overview", @lecture, @foldout  }
+## Lecture Material 
 
-The first video below introduces cluster analysis and a simple partitioning algorithm used to segment data into specific partitions or groups.  The second video below introduces other popular clustering methods -- Hierarchical and model-based clustering.  Model-based clustering is the method we will use in R with the MClust package. The lecture notes can be found [here (PPT)](https://github.com/DS4PS/cpp-529-master/raw/master/lectures/ClusBasic.ppt).
+**An Overview of Cluster Analysis** 
 
+The first video below introduces cluster analysis and a simple partitioning algorithm used to segment data into specific partitions or groups.  
 
+The second video below introduces other popular clustering methods -- Hierarchical and model-based clustering.  Model-based clustering is the method we will use in R with the MClust package. The lecture notes can be found [here (PPT)](https://github.com/DS4PS/cpp-529-master/raw/master/lectures/ClusBasic.ppt).
+
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U8zHi32KnJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -550,12 +551,9 @@ The first video below introduces cluster analysis and a simple partitioning algo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-_oPRGATOBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-*** { @unit = "Due Nov 6th", @title = "Lab 03", @assignment, @foldout  }
+## Lab 03
 
-<br>
-<br>
-
-## Overview
+**Overview** 
 
 The purpose of Lab 3 is to show you how to apply model-based clustering to classify Phoenix neighborhoods into meaningful groups.  Lab 3 is a code-through only and will not require you to modify any code as was the case in Lab 2.  
 
@@ -568,13 +566,11 @@ You may access Lab 3 instructions by clicking on the LAB-03 Instructions below. 
 ***Reminder:*** Name your files according to the convention: Lab-##-LastName.xxx
 
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial.html">LAB-03 Instructions</a>
+<a class="uk-button uk-button-default" href="LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
 
 
 After you have completed Lab 3 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
 
-
-## Submit Solutions to Canvas:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
@@ -582,13 +578,15 @@ After you have completed Lab 3 you can submit it via Canvas using the link below
 <br>
 
 
-*** { @unit = "Due Nov 6th", @title = "Yellowdig Discussion Assignment: Labeling Phoenix Neighborhood Groups", @assignment, @foldout  }
+## Yellowdig Topic
 
-<br>
-<br>
+**Identifying (Naming) Phoenix Neighborhood Types**
 
-Nice job! You have successfully completed lab assignment 3 that relies on a host of census variables and employs model-based clustering (mclust) to group Phoenix neighborhoods into 8 unique categories.  You are now ready for the fun part -- giving a `label` for each neighborhood grouping that adequately represents that particular grouping.  To do this, you need to visually inspect carefully how the census varaibles relate to each neighborhood group and make an informed opinion about what type of label to apply.  
+Nice job! You have successfully completed lab assignment 3 that relies on a host of census variables and employs model-based clustering (mclust) to group Phoenix neighborhoods into 8 unique categories.  
 
+You are now ready for the fun part -- giving a `label` to each group. To do this, you need to visually inspect which census variables are prominent in each group and make an informed opinion about what type of label to apply.  
+
+Labels should be informative. There will always be a trade-off between precision labels (literal and dry but unambiguous) and colorful labels (metaphors, playful, easy to remember). Your task is to create a set of labels that balances these two considerations without offending anyone with stereotypes (please be respectful). 
 
 <br> 
 
@@ -596,10 +594,18 @@ Nice job! You have successfully completed lab assignment 3 that relies on a host
 
 > For your discussion topic this week, you will  propose labels for Groups 1-8 constructed during Lab 3 using cluster analysis **Image 1** below.  In order to provide an appropriate label, you must do a careful inspection of how the census variables overall relate to a particular group **Image 2**. A good label will be catchy and descriptive of the population within the neighborhood cluster.
 
+Post your reflection as a new pin: 
 
-**Please post your reflection as a new pin on [YellowDig](https://canvas.asu.edu/courses/37703/assignments/842344).**
+---
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+**Post by {{page.yellowdig.post-03}}**
+
+---
 
 <br>
+
 Image 1:
 
 ![](https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
@@ -614,7 +620,7 @@ Image 2:
 
 <br>
 
--->
+
 
 
 

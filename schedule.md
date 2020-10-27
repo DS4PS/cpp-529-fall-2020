@@ -566,13 +566,15 @@ You may access Lab 3 instructions by clicking on the LAB-03 Instructions below. 
 ***Reminder:*** Name your files according to the convention: Lab-##-LastName.xxx
 
 
-<a class="uk-button uk-button-default" href="LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
+<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
 
 
 After you have completed Lab 3 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+**Due {{page.labs.lab-03}}**
 
 <br>
 <br>
@@ -587,10 +589,6 @@ Nice job! You have successfully completed lab assignment 3 that relies on a host
 You are now ready for the fun part -- giving a `label` to each group. To do this, you need to visually inspect which census variables are prominent in each group and make an informed opinion about what type of label to apply.  
 
 Labels should be informative. There will always be a trade-off between precision labels (literal and dry but unambiguous) and colorful labels (metaphors, playful, easy to remember). Your task is to create a set of labels that balances these two considerations without offending anyone with stereotypes (please be respectful). 
-
-<br> 
-
-**ASSIGNMENT:** 
 
 > For your discussion topic this week, you will  propose labels for Groups 1-8 constructed during Lab 3 using cluster analysis **Image 1** below.  In order to provide an appropriate label, you must do a careful inspection of how the census variables overall relate to a particular group **Image 2**. A good label will be catchy and descriptive of the population within the neighborhood cluster.
 
@@ -608,11 +606,11 @@ Post your reflection as a new pin:
 
 Image 1:
 
-![](https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
+![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
 
 <br> 
 Image 2:
-![](https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
+![](../labs/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
 
 <br>
 

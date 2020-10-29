@@ -521,17 +521,21 @@ Please post your reflection as a new pin on YellowDig:
 
 **Description**
 
-Neighborhood change is a complicated concept with a lot of loaded terminology. We might think about neighborhoods that are "revitalized", "gentrified", that are "stable", or that "decline".  
+Neighborhood change is a complicated concept with a lot of loaded terminology. We might think about neighborhoods that are "revitalized", "gentrified", that are "stable", or that "decline". For the labels to be meaningful each group should be mutually exclusive and sufficiently distinct from other groups in the taxonomy. 
 
-This week we are more interested in how we might make sense of our data by identifying meaningful groups. Later we will see how we might use group membership to make predictions with the data. For example, can a city forecast how it's current neighborhoods are likely to change over the next decade? Does the current group status of a community give us reliable information about how it might change over time? These sorts of insights can help with urban planning processes. 
+These labels are a bit loaded because they come with tacit value-judgements. Stable is desireable, revitalization is good, but gentrification is often considered bad. 
 
-In this unit, we will be learning how to implement cluster analysis in R as a data reduction technique.  We will classify census tracts in the Pheonix area into groups (or neighborhoods) that can be defined on the basis of certain characteristics.  
+This example is just one way that we can think about classifying census tracts by assigning similar ones into coherent groups. 
+
+In this unit, we will be learning how to implement cluster analysis in R as a data reduction technique.  We will classify census tracts in the Pheonix area into groups (or neighborhoods) that can be defined on the basis of certain characteristics. 
 
 You can explore one example by examining how botanists might create "species" based upon characteristics of flowers:
 
 [Clustering Example](https://shiny.rstudio.com/gallery/kmeans-example.html)
 
 A data-driven approach to understanding neighborhood change requires use to (1) define "neighborhoods", or groups of census tracks in the data that are very similar, and (2) use those group characteristics at a point in time to predict how the "neighborhood" might change in the future. This unit focuses on Step (1) - identifying clusters.
+
+Later on we will see how we might use group membership to make predictions with the data. For example, can a city forecast how it's current neighborhoods are likely to change over the next decade? Does the current group status of a community give us reliable information about how it might change over time? These sorts of insights can help with urban planning processes. 
 
 ## Assigned Reading 
 

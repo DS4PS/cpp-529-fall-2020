@@ -624,7 +624,7 @@ Image 1:
 
 <br> 
 Image 2:
-![](../labs/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
+![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
 
 <br>
 

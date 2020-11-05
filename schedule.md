@@ -652,21 +652,10 @@ We are interesting in understanding neighborhood change. These data-driven appro
 
 <!--- 
 
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout  }
+## Unit Overview
 
 
-## Description 
-
-
-*Temkin, K., & Rohe, W. (1996). Neighborhood change and urban policy. Journal of planning education and research, 15(3), 159-170.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/neighborhood-change-and-urban-policy.pdf) ]
-
-*Grigsby, W., Baratz, M., Galster, G., & Maclennan, D. (1987). The dynamic of neighborhood change and decline. Progress in Planning, 28, 1.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/Grigsby-et-al-1983-Dynamics-of-Neighbourhood-Change-and-Decline.pdf) ]
-
-*Schwirian, K. P. (1983). Models of neighborhood change. Annual review of Sociology, 9(1), 83-102.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/models-of-neighborhood-change.pdf) ]
-
-
-
-## Assigned Reading
+**Assigned Reading**
 
 REQUIRED:
 
@@ -683,12 +672,6 @@ You can explore one of these algorithms by looking at examples of how botanists 
 A data-driven approach to understanding neighborhood change requires use to (1) define "neighborhoods", or groups of census tracks in the data that are very similar, and (2) use those group characteristics at a point in time to predict how the "neighborhood" might change in the future. Both of the papers present variations on Step (1) above.
 
 
-
-<br>
-<br>
-
-*** { @unit = "Due Nov 6th", @title = "Reading Assignment", @assignment, @foldout  }
-
 <br>
 <br>
 
@@ -701,13 +684,30 @@ Read the two papers from `Neighborhood Types` section above (Links provided agai
 
 Please copy these questions, along with your answers, at the beginning of your .rmd file used for Lab 4 (See Lab 4 assignment below). 
 
+**Description**
 
 
-*** { @unit = "", @title = "Geography and Economic Success", @lecture, @foldout  }
+*Temkin, K., & Rohe, W. (1996). Neighborhood change and urban policy. Journal of planning education and research, 15(3), 159-170.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/neighborhood-change-and-urban-policy.pdf) ]
+
+*Grigsby, W., Baratz, M., Galster, G., & Maclennan, D. (1987). The dynamic of neighborhood change and decline. Progress in Planning, 28, 1.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/Grigsby-et-al-1983-Dynamics-of-Neighbourhood-Change-and-Decline.pdf) ]
+
+*Schwirian, K. P. (1983). Models of neighborhood change. Annual review of Sociology, 9(1), 83-102.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/models-of-neighborhood-change.pdf) ]
+
+
+<br>
+<br>
+
+
+
+
+
+## Lecture
+
+Geography and Economic Success
 
 A new study by the Harvard economists Raj Chetty and Nathaniel Hendren, when read in combination with an important study they wrote with Lawrence Katz, makes the most compelling case to date that **good neighborhoods nurture success**... they are the most powerful demonstration yet that neighborhoods — their schools, community, neighbors, local amenities, economic opportunities and social norms — are a critical factor shaping your children’s outcomes. It’s an intuitive idea, although the earlier evidence for it had been surprisingly thin.
 
-I discuss Chetty's work in the video lecture below. 
+Chetty's work has brought new insight to the question:  
 
 
 <br>
@@ -720,30 +720,23 @@ I discuss Chetty's work in the video lecture below.
 <br>
 
 
-*** { @unit = "Due Nov 13th", @title = "Lab 04", @assignment, @foldout  }
+## Lab 04
 
-<br>
-<br>
-
-## Overview
+**Overview**
 
 The purpose of Lab 4 is to replicate the work you did for the previous lab, but instead of using the Phoenix data you will select a city of your choice to use for this lab, and the final project.
 
-
-## Lab Instructions
+**Lab Instructions**
 
 You may access Lab 4 instructions by clicking on the LAB-04 Instructions below.   
 
-***Reminder:*** Include the four questions, along with your answers from the reading assignment (see above) at the beginning of your RMD file. 
-
-
-## Lab Instructions
-
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/labs/lab-04-instructions.html">LAB-04 Instructions</a>
 
-## Submit Solutions to Canvas:
+**Submit Solutions to Canvas**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+***Reminder:*** Include the four questions, along with your answers from the reading assignment (see above) at the beginning of your RMD file. 
 
 <br>
 

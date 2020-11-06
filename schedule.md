@@ -10,20 +10,20 @@ yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 yellowdig: 
   post-01: 'Saturday, Oct 17th'
   post-02: 'Saturday, Oct 24th'
-  post-03: 'Monday, Sept 7th' 
-  post-04: 'Monday, Sept 14th' 
-  post-05: 'Monday, Sept 21st' 
-  post-06: 'Monday, Sept 28th' 
-  post-07: 'Monday, Oct 5th' 
+  post-03: 'Monday, Nov 2nd' 
+  post-04: 'Monday, Nov 9th' 
+  post-05: 'Monday, Nov 16th' 
+  post-06: 'Monday' 
+  post-07: 'Monday' 
   
 
 labs:
   lab-01:  'Wednesday, Oct 21st' 
   lab-02:  'Wednesday, Oct 28th'
   lab-03:  'Wednesday, Nov 4th'
-  lab-04:  'Wednesday, Nov 4th'
-  lab-05:  'Wednesday, Nov 4th'
-  lab-06:  'Wednesday, Nov 4th'
+  lab-04:  'Wednesday, Nov 11th'
+  lab-05:  'Wednesday, Nov 18th'
+  lab-06:  'Wednesday, Nov 25th'
   
   
 projects: 

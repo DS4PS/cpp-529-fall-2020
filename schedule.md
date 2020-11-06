@@ -650,6 +650,28 @@ Image 2:
 
 We are interesting in understanding neighborhood change. These data-driven approaches to the phenomenon use machine-learning algorithms to "discover" coherent communities within the city by grouping census tracks into groups that minimize within-group differences and maximize between-group differences. 
 
+
+## Lab 04
+
+**Overview**
+
+The purpose of Lab 4 is to replicate the work you did for the previous lab, but instead of using the Phoenix data you will select a city of your choice to use for this lab, and the final project.
+
+**Lab Instructions**
+
+<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/labs/lab-04-instructions.html">LAB-04 Instructions</a>
+
+**Submit Solutions to Canvas**
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+
+<br>
+
+--------------------------------------------------------------------------------------------------- 
+<br>
+
+
 <!--- 
 
 ## Unit Overview
@@ -720,31 +742,14 @@ Chetty's work has brought new insight to the question:
 <br>
 
 
-## Lab 04
 
-**Overview**
 
-The purpose of Lab 4 is to replicate the work you did for the previous lab, but instead of using the Phoenix data you will select a city of your choice to use for this lab, and the final project.
 
-**Lab Instructions**
-
-You may access Lab 4 instructions by clicking on the LAB-04 Instructions below.   
-
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/labs/lab-04-instructions.html">LAB-04 Instructions</a>
-
-**Submit Solutions to Canvas**
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 ***Reminder:*** Include the four questions, along with your answers from the reading assignment (see above) at the beginning of your RMD file. 
 
-<br>
-
---------------------------------------------------------------------------------------------------- 
-<br>
-
-
 -->
+
 
 
 

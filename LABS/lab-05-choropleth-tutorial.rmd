@@ -254,3 +254,104 @@ grid.arrange(Plot1,Plot3,Plot4,Plot5, nrow=2)
 ```
 
 
+
+
+
+# Example of Skew Correction
+
+```{r}
+ggplot(CenDF) +
+    geom_sf(aes(fill = HHInc_HousePrice_Ratio), color=NA) +
+    coord_sf(datum=NA) +
+    labs(title = "House-Price-to-Income Ratio",
+         caption = "Source: ACS 5-year, 2013-2017",
+         fill = "Price-Income Ratio") +
+    scale_fill_viridis(direction=-1)
+```
+
+
+## Revising the Scale for Skewed Data
+
+Our price ratio is skewed because of the long right tail: 
+
+```{r}
+hist( CenDF$HHInc_HousePrice_Ratio, 
+      breaks=50, col="darkgray" )
+```
+
+As a result, most of our data will be crammed into the bottom half of our scale, making the colors a lot harder to interpret. 
+
+We can consider ways to transform the scale before visualization. 
+
+Logging values can pull-in outliers: 
+
+
+```{r}
+hist( log( CenDF$HHInc_HousePrice_Ratio + 1 ), 
+      breaks=50, col="darkgray" )
+```
+
+We can also top-code scales to remove the long tail: 
+
+```{r}
+# top-coding 
+CenDF$inc.home.ratio <- CenDF$HHInc_HousePrice_Ratio
+CenDF$inc.home.ratio[ CenDF$inc.home.ratio > 5 ] <- 5
+
+hist( CenDF$inc.home.ratio, 
+      breaks=50, col="darkgray" )
+```
+
+
+Let's also select a divergent scale to better differentiate high and low values (a neutral color like gray represents average values). 
+
+The **pals** package has some crisp color scales. 
+
+```{r}
+### devtools::install_github("kwstat/pals")   
+library( pals )   
+pal.map( ocean.balance, n=13, main="Example Divergent Colorscale")
+```
+
+
+Let's see how this changes our interpretation of the data: 
+
+
+```{r}
+## REGULAR DIVERGENT SCALE WHEN DATA IS SKEWED
+ggplot(CenDF) +
+    geom_sf(aes(fill = HHInc_HousePrice_Ratio), color=NA) +
+    coord_sf( datum=NA ) +
+    labs( title = "House-Price-to-Income Ratio",
+          caption = "Source: ACS 5-year, 2013-2017",
+          fill = "Price-Income Ratio" ) +
+    scale_fill_gradientn( colours=ocean.balance(10), guide = "colourbar" )
+
+
+## TOP-CODED SCALE - MAX IS RATIO OF 6
+
+CenDF$inc.home.ratio <- CenDF$HHInc_HousePrice_Ratio
+CenDF$inc.home.ratio[ CenDF$inc.home.ratio > 6 ] <- 6
+
+ggplot(CenDF) +
+    geom_sf(aes(fill = inc.home.ratio), color=NA) +
+    coord_sf( datum=NA ) +
+    labs( title = "House-Price-to-Income Ratio",
+          caption = "Source: ACS 5-year, 2013-2017",
+          fill = "Price-Income Ratio" ) +
+    scale_fill_gradientn( colours=ocean.balance(10), guide = "colourbar" )
+
+
+## LOGGED RATIO 
+
+CenDF$log.price.ratio <- log( CenDF$HHInc_HousePrice_Ratio + 1 )
+
+ggplot(CenDF) +
+    geom_sf(aes(fill = log.price.ratio), color=NA) +
+    coord_sf( datum=NA ) +
+    labs( title = "House-Price-to-Income Ratio",
+          caption = "Source: ACS 5-year, 2013-2017",
+          fill = "Price-Income Ratio (log)" ) +
+    scale_fill_gradientn( colours=ocean.balance(10), guide = "colourbar" )
+```
+

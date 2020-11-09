@@ -154,17 +154,39 @@ In short, we will pay attention to the nuances of gentrification, but generally 
 
 
 
-
-
 # Data
 
-Load your wrangled datasets and prepare your variables for analysis:
+Since the US Census tries to ensure census tracts have populations between 2,000 and 4,000 individuals, regions that experience growth in population density require that tracts be split over time and regions that are losing population need to combine tracts. As a result, comparing tracts over time can be tricky since the geographies change. 
 
+Harmonization of census data is the process of translating data from multiple decades onto a single geography so that changes over time are meaningful. This requires a weighted sampling process called apportionment. Typically you use the most recent map because it will have the most geographic units (you are more likely to split tracts over time than to combine them), and thus supports the most granular analysis. *Note that tracts are only redrawn each 10 years, so 2012 and 2017 data would come from the same geographies. Data from 2008 and 2012, however, would not (tracts were re-drawn in 2010).*
 
-```{r}
+For this lab we will use data from the [Longitudinal Tract Database (LTDB) Project](https://s4.ad.brown.edu/Projects/Diversity/Researcher/Bridging.htm), a project that has harmonized a set of variables from 1970 to 2010. 
+
+Logan, John R., Zengwang Xu, and Brian J. Stults. 2014. "Interpolating US Decennial Census Tract Data from as Early as 1970 to 2010: A Longitudinal Tract Database" The Professional Geographer 66(3): 412–420. (Click here to download).
+Logan, John R., Brian J. Stults, and Zengwang Xu. 2016. "Validating Population Estimates for Harmonized Census Tract Data, 2000–2010" Annals of the American Association of Geographers.
+
+```{r, echo=F}
 d1 <- readRDS( "data/rodeo/LTDB-2000.rds" )
 d2 <- readRDS( "data/rodeo/LTDB-2010.rds" )
 md <- readRDS( "data/rodeo/LTDB-META-DATA.rds" )
+
+d1 <- select( d1, - year )
+d2 <- select( d2, - year )
+
+d <- merge( d1, d2, by="tractid" )
+d <- merge( d, md, by="tractid" )
+```
+
+
+```{r, eval=F}
+URL1 <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-2000.rds"
+d1 <- readRDS( gzcon( url( URL1 ) ) )
+
+URL2 <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-2010.rds"
+d2 <- readRDS( gzcon( url( URL2 ) ) )
+
+URLmd <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-META-DATA.rds"
+md <- readRDS( gzcon( url( URLmd ) ) )
 
 d1 <- select( d1, - year )
 d2 <- select( d2, - year )
@@ -188,21 +210,18 @@ d <- filter( d, urban == "urban" )
 
 **Create New Variables**
 
-```{r}
-# pro tip when getting started
-# and exploring a lot of variables
-# while making changes to your dataset:
-
-d.full <- d  # keep a copy so you don't have to reload 
-```
-
 
 You will want to create more variables, but these examples will get you started. 
 
+```{r, echo=F, eval=F}
+          mhv.change.00.to.10 = mhmval12 - mhmval00,
+          # percent change in median home value 2000 to 2010 
+          p.mhv.change = 100 * (mhmval12 - mhmval00) / mhmval00,
+          # poverty rate in 2000
+```
+
 
 ```{r}
-d <- d.full  # reset to the original dataset
-
 d <- select( d, tractid, 
              mhmval00, mhmval12, 
              hinc00, 
@@ -216,17 +235,25 @@ d <- select( d, tractid,
  
 d <- 
   d %>%
-  mutate( p.white = 100 * nhwht00 / pop00.x,
+  mutate( # percent white in 2000
+          p.white = 100 * nhwht00 / pop00.x,
+          # percent black in 2000
           p.black = 100 * nhblk00 / pop00.x,
+          # percent hispanic in 2000
           p.hisp = 100 * hisp00 / pop00.x, 
+          # percent asian in 2000
           p.asian = 100 * asian00 / pop00.x,
+          # percent high school grads by age 25 in 2000 
           p.hs = 100 * (hs00+col00) / ag25up00,
+          # percent pop with college degree in 2000
           p.col = 100 * col00 / ag25up00,
+          # percent employed in professional fields in 2000
           p.prof = 100 * prof00 / empclf00,
+          # percent unemployment  in 2000
           p.unemp = 100 * unemp00 / clf00,
+          # percent of housing lots in tract that are vacant in 2000
           p.vacant = 100 * vac00 / hu00,
-          mhv.change.00.to.10 = mhmval12 - mhmval00,
-          p.mhv.change = 100 * (mhmval12 - mhmval00) / mhmval00,
+          # dollar change in median home value 2000 to 2010 
           pov.rate = 100 * npov00 / dpov00 )
 
 
@@ -478,59 +505,6 @@ Understanding some of the basic factors driving change can help you identify var
 
 It is helpful to test your understanding of your policy domain by trying to explain the main drivers of change to a hypothetical undergraduate student. Is the idea clear enough in your own mind to explain it to another person? How confident do you feel in your story? If you don't feel comfortable with this exercise, perhaps you should do some more background reading and reflection before you try to model anything!
 
-
-
-
-## P-Value Hacking 
-
-As mentioned above, the process of variable selection and model specification is complex partly because of the combinatorics of choice - with a large dataset like this one even a small model with three independent variables results in millions of possible models. 
-
-The number sounds overwhelming, but it is less daunting when you consider that we never conduct analysis by trying random combinations of variables. Rather, we usually know which is the policy variable. We need to select the units of measure and functional form, so there are a couple of decisions necessary. But once we have settled on our first variable in the model we have removed a single degree of freedom, but that has a huge impact on remaining decisions. We have gone from over 10 million to around 78 thousand.  
-
-```{r}
-choose( (99*4), 2 ) %>% format( big.mark="," )
-```
-
-Based upon our background reading we know that there is one significant competing hypothesis that we want to account for, e.g. the socio-economic status of parents in the school classroom size example. Selecting that variable then eliminates more degrees of freedom.
-
-In this way, the process of selecting a model looks like a decision tree:
-
-![](images/decision-tree.jpeg)
-
-In the end we might have 10 million *possible* models but when we follow some modeling process we see that several easy choices will eliminate lots of others. There will be many instances where you come to a fork in the road with two or more paths forward (variables to include, or units of measure to select). Often times you will try **all** of the roads one at a time, then return to the fork and use model fit statistics to determine which path forward is best. This is actually how some machine learning applications work - the process is called pruning the decision tree. 
-
-And here lies the fundamental tension in social sciences. We want to find the model that best describes the data, but due to the incremental nature of model selection we will gravitate toward the options that we can make sense of. It is much more common to assume that a program is effective at the onset and look for evidence accordingly. If it a lot less common to begin an evaluation looking for lack of evidence of program success. As a result we are always vulnerable to confirmation bias. 
-
-![](images/p-value-hacking-decision-tree.png)
-
-
-We are never objective bystanders or disinterested parties that approach the data with no agenda, merely interpretting the patterns for our audience. We are interested parties because our careers or our contracts often depend upon not missing something that would have allowed us to lend support to the program we are evaluating. As a result, we are extremely succeptible to confirmation bias. We are not the judge in the courtroom adjudicating truth in the data, we are the prosecutor that was given a job to make the strongest case possible about the guilt of the client, or in our case the effectiveness of a program. We try hard to tell a story with the data, and the funders or the peer reviewers serve as the jury that decides whether they believe the evidence. 
-
-A natural consequence of this iterative process of model selection is that we tend to find our way to the models that support our theories. Partly this is because it is much easier to make that case that impact exists than it is to make the case that it doesn't. If you have done a reasonable job of accounting for soures of bias and you are able to identify program impact then your audience will be open to the results. The hard part is eliminating alternative competing hypotheses so you can make a convincing claim that the outcomes are a result of the program and not another explanation. 
-
-If, however, you arrive at null results it is comparatively **much harder** to make the case that the program has no impact because there are so many things that can lead to null findings other than lack of program impact. If your sample size is too small you will have null results. If you have too much noise (measurement error) in the dependent variable you will have null results. If you have any bias that shifts the estimate of impact toward zero it can lead to null results. Oddly, it requires more evidence to convince people that something doesn't work than to convince them it does. One of the key contributors to the crisis of reproducibility in science is that it is much harder to publish null results than it is to publish a model with significant results. 
-
-It's important to note that there is nothing nefarious about the process. The typical analyst is not manipulating data to achieve desired results. They are also typically not using brute force methods to run thousands of models that select the one that returns the largest program effects or smallest p-values. Rather, when you land on a branch of the decision tree where the data makes sense according to your task at hand or mental model of how the world works, which generates a comfortableness with the models. Alternatively, when you are getting null results you keep thinking that you must be doing something wrong, that there is something you are not seeing, so you continue to transform variables and try new models.
-
-As a result, journals inadvertantly act as gatekeepers to suppress evidence that programs don't work or that a theory does not explain the world. Analysts and authors acquiesce and tweak the models so they fit expectations. Journals get interesting results. Authors get tenure. Everyone is happy. 
-
-
-The problem is that all of these decisions are innocent enough, subtle enough, and harmless enough when they occur on a single paper. But at scale they begin to skew the body of evidence of an entire field. The problem is impossible to detect in a single paper because there is always randomness in sampling that could explain the result. In an era of big data and meta-analysis, however, it is possible to aggregate results across thousands of paper to see the distribution of published p-values. Sampling theory can be used to determine what the distribution of p-values should look like within a field. When compared against observed values in published studies it is possible to test for publication bias in a scientific field. As an example, some recent papers have aggregated thousands of published studies to demonstrate the improbably clustering of p-values right below 0.05 across various disciplines. It looks very similar to reported income in tax data right around the threshold where a slightly higher income would bump people into a higher tax bracket. When people are right near the threshold they all of a sudden need to take four weeks of vacation at the end of the year, or else they become very generous and donate thousands of dollars to a tax-deductible charity, thus dropping their taxable income below the threshold again. 
-
-![](images/p-hacking.png)
-
-
-What these patterns often suggest is that the peer review process results in an under-reporting of null results. If we think about research as a cumulative endeavor where lots of studies on a topic contribute to the consensus about a phenomenon, then suppressing studies that generate small effect sizes is analogous to chopping off the lower third of your data - the average effect in a literature will be artificially large. And consequently, we might have too much confidence in the effectiveness of a cancer drug, we might believe management practices work when they don't, and we might promote public policies that we believe will improve lives but they end up generating very little impact and costing a lot of money.  
-
-There is no evil villian in the story and there are no easy solutions to problems that arise naturally from cognitive biases that emerge from the way the brain manages comlexity and incentives in high-stakes systems. But science is adapting and professional norms are changing. Most notably, after recognizing that analysts operate like prosecutors making their case with data, it became apparent that a fair court requires a defense attourney as well. An important keystone of trial law is that all evidence must be shared between the legal teams so that the arguments for guilt or innocence are built through logic and persuasion, not suppression of information. 
-
-Similarly, many evidence-based fields are moving toward open data and open science models because it has become apparent that peer review only works when reviewers have access to all of the same information that the authors do. A jury would never believe a prosecutor that makes the argument, I have evidence that exonorates my client, and I am not going to share the evidence with you but I need you to trust me that it exists and it is good evidence. The judge would throw the prosecutor out of the courtroom and require that all evidence be shared with the defense. 
-
-Research and evaluation is no different. The evaluator's job **is** to make a strong case for the program. The emerging consensus is that a data and methods section in a paper or report is not sufficient to describe the process that generated the results. A proper court would give the data and code to the defense team so they can do their best to poke holes in the evidence and build counter-arguments. If the story can hold up to that level of scrutiny and cross-examination, then the research is robust. 
-
-As you are learning during the project, sharing data and code is a non-trivial task. If you don't have clear documentation about the data, the process, and the programs that were used to generate results then no one will be able to make sense of a bunch of folders that contain a bunch of files. Similarly, the evidence might make it through ajudication via a jury of peers, but to have impact it has to also be adopted widely. Projects that use open data, share code via platforms like GitHub, and leverage free open-source tools are much more likely to be shared and replicated, leading to more impact. **Project management is a key component of effectiveness for the data scientist.**
-
-Most importantly, awareness of the challenges of working with data should remind you to be diligent and humble. The next part of this tutorial will highlight some of the challenges of model specification to emphasize that caution and humility are required when doing data analytics. Running regressions and interpretting coefficients is the easy part. Being confident that you are explaining the world with any veracity is the hard part. It takes a lot of practice to become comfortable with the process, but it also takes a commitment to curiosity, a self-awareness about the process to avoid any aggregious types of p-hacking, and the willingness to test your assumptions.
 
 
 
@@ -809,166 +783,6 @@ If you have high multicollinearity and you want to interpret the variables then:
 
 1. Select which variable you believe best captures the theory / hypothesis or the one you belive to be the best measure of the underlying construct. 
 2. Combine the variables into a single scale or index. Use factor analysis (preferred option) or normalize variables and select a set that generates a reliable metric like you have done in a previous lab. 
-
-
-
-## Group Structure
-
-When building models it is important to think about whether there are groups in the data that would influence the outcome. You will cover this topic in the lecture on [Fixed Effect Models](https://ds4ps.org/pe4ps-textbook/docs/p-040-fixed-effects.html) in CPP 525. 
-
-In this domain we know that neighborhoods belong to cities, and cities each have distinctive histories, political structures, economies, geographies and climates. Some cities were thriving over the study period and experienced population growth and strong economic expansion (relatively speaking, all were impacted by the 2001 and 2008 economic crises). Others were in decline, losing population and had shrinking economies. 
-
-These are broad city-level processes that unfold over decades. No individual census tract within a city will be isolated from these trends occuring metro-wide. As a result we would expect the overall health of the city to impact the home values in each tract. 
-
-
-```{r, fig.height=4, fig.width=10}
-d5 <- filter( d, cbsaname %in% 
-                c("Tyler, TX",
-                  "Minneapolis-St. Paul-Bloomington, MN-WI",
-                  "San Francisco-San Mateo-Redwood City,CA") )
-
-d5$cbsaname <- factor( d5$cbsaname, labels=c("MSP-MN","SF-CA","Tyler-TX") )
-
-par( mar=c(4,6,4,6), mfrow=c(1,2) )
-plot( d5$cbsaname,  d5$mhv.00, las=1, frame.plot=F, outline=F,
-      xlab="", ylab="", main="Home Values in 2000" )
-abline( h=seq(0,1200000,100000), lty=3, col=gray(0.5,0.3) )
-axis( side=4, las=1 )
-
-plot( d5$cbsaname,  d5$p.unemp, las=1, frame.plot=F, outline=F,
-      xlab="", ylab="", main="Unemployment Rates in 2000" )
-abline( h=seq(0,15,1), lty=3, col=gray(0.5,0.3) )
-axis( side=4, las=1 )
-
-```
-
-
-We know that the health of the city in 2000 and the changes that occur at the metro level between 2000 and 2010 will impact all census tracts in the city. We can see the metro-level clustering in a plot:
-
-```{r}
-d5 <- filter( d, cbsaname %in%
-                c("Tyler, TX",
-                  "Youngstown-Warren-Boardman, OH-PA",
-                  "Syracuse, NY") )
-
-d5$mhv.growth[ d5$mhv.growth > 200 ] <- NA
-d5$p.unemp <- log10( d5$p.unemp + 1 )
-
-x <- rnorm( nrow(d5), 0, 0.1 ) +
-     as.numeric( d5$cbsaname == "Tyler, TX" ) + 
-     2 * as.numeric( d5$cbsaname == "Youngstown-Warren-Boardman, OH-PA" ) + 
-     3* as.numeric( d5$cbsaname == "Syracuse, NY" ) 
-
-
-par( mfrow=c(1,2) )
-
-plot( x, d5$mhv.growth, 
-      pch=19, cex=1.5, bty = "n",  
-	    col=factor(d5$cbsa),
-      ylim=c(-50,50),
-      xaxt="n", 
-      ylab="", xlab="",
-      main="MHV Growth")
-axis( side=1, at=1:3, labels=c("Tyler","Youngstown","Syracuse"), 
-      tick=F, col.axis="gray60", cex.axis=1.3 )
-
-plot( x, d5$p.unemp, 
-      pch=19, cex=1.5, bty = "n",  
-	    col=factor(d5$cbsa),
-      # ylim=c(0,40),
-      xaxt="n", 
-      ylab="", xlab="",
-      main="Unemployment (logged)")
-axis( side=1, at=1:3, labels=c("Tyler","Youngstown","Syracuse"), 
-      tick=F, col.axis="gray60", cex.axis=1.3 )
-
-
-```
-
-Which would result in different baseline metro-level home value growth rates in a model when each city is given its own intercept. 
-
-```{r}
-# d5 <- filter( d, cbsaname %in% 
-#                 c("Tyler, TX",
-#                   "Youngstown-Warren-Boardman, OH-PA",
-#                   "Syracuse, NY") )
-# 
-# d5$mhv.growth[ d5$mhv.growth > 200 ] <- NA
-# d5$p.unemp <- log10( d5$p.unemp + 1 )
-
-m <- lm( mhv.growth ~ factor(cbsaname) + p.unemp - 1, data=d5 )
-
-b0.syracuse   <- m$coefficients[1] 
-b0.tyler      <- m$coefficients[2] 
-b0.youngston  <- m$coefficients[3] 
-b1            <- m$coefficients[4] 
-
-palette( c( "steelblue", "green3", "darkorange"  ) )
-palette( adjustcolor( palette(), alpha.f = 0.3 ) )
-
-plot( d5$p.unemp, d5$mhv.growth,
-	    pch=19, cex=1.5, bty = "n",  
-	    col=factor(d5$cbsa),
-      ylim=c(-50,50),
-      xlab="Unemployment Rate (logged)",
-      ylab="Median Home Value Growth 2000-2010")
-	      
-abline( b0.syracuse, b1, col="steelblue", lwd=3 )
-abline( b0.tyler, b1, col="green3", lwd=3 )
-abline( b0.youngston, b1, col="darkorange", lwd=3 )
-
-```
-
-
-You probably recognize this approach as a city-level fixed effect. Since the metro area is a salient contextual variable it is extremely important to account for it if you want to remove bias from your estimates. For an in-depth discussion review the [lecture notes](https://ds4ps.org/pe4ps-textbook/docs/p-040-fixed-effects.html), but for a simple example consider the following. 
-
-We want to know whether having more college graduates living in a community will increase MHV growth over the study period. We exame two tracts located in different cities:
-
-|   |   |   | 
-|-----|--------|--------|      
-| Community | A | B |     
-| % Over 25 w College Degree | 50% | 20% |      
-| MHV Growth 2000-2010 |  10%  |  30%  |    
-
-
-
-It looks as though college graduates suppress growth, but if we dig deeper into the data we see that Tract A is located in a city in decline. The average tract in the city saw median home values **decrease** by 5%, so comparatively a growth of 10% was high for the city. Comparatively, Tract B is located in a rapidly-growing city. The average median home value growth is 50% in the metro area, so comparatively 30% in the tract was low for the city. 
-
-Once we account for the census tract context (the overall economic trends in the metro area) then the relationship makes sense again - tracts with more college graduates are growing faster *than other tracts in the same metro area*.
-
-
-We account for context by adding a metro-level fixed effect to the model. Alternatively, we can add the average median home value growth of the metro area as a control variable:
-
-```{r, results="asis"}
-d.reg <- d
-
-d.reg$mhv.growth[ d.reg$mhv.growth > 200 ] <- NA
-d.reg$p.unemp <- log10( d.reg$p.unemp + 1 )
-
-# average growth in median home value for the city
-d.reg <- 
-  d.reg %>%
-  group_by( cbsaname ) %>%
-  mutate( metro.mhv.growth = 100 * median( mhv.growth, na.rm=T ) ) %>%
-  ungroup() 
-
-m1 <- lm( mhv.growth ~ p.unemp, data=d.reg )
-m2 <- lm( mhv.growth ~ p.unemp + metro.mhv.growth, data=d.reg )
-m3 <- lm( mhv.growth ~ p.unemp + cbsa, data=d.reg )
-
-stargazer( m1, m2, m3, 
-           type=s.type, digits=2,
-           omit.stat = c("rsq","f"),
-           omit="cbsa",
-           add.lines = list(c("Metro Fixed Effects:", "NO", "NO","YES")) )
-```
-
-
-Note that model 2 and model 3 produce similar slopes for unemployment, similar R-squares, and similar standard error of the regression (labeled Residual Std. Error here). Recall that we can run a fixed-effect model by demeaning our data using group-level means. Adding a metro-level control will achieve a similar result.
-
-The metro-level fixed effect is preferable because it will anchor the dependent variable as well. But when not possible adding a group-level mean of the dependent variable is a feasible alternative. 
-
-
 
 
 

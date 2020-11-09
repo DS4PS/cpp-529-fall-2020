@@ -27,44 +27,81 @@ library( pander )
 
 <br>
 
-This lab is designed to help you build your baseline model of neighborhood change before adding the policy variables in the next lab. 
+This lab is designed to help you build a baseline model of neighborhood change. 
 
 
 
 
 # Part 1 - Data
 
-Similar to your previous lab, create a dataset that includes 2000 and 2010 census variables drop all rural census tracts. 
+Follow the steps from the tutorial to create a dataset that includes 2000 and 2010 census variables and make sure to: 
 
-Create a variable that measures the growth of median home value from 2000 to 2010. 
+* Drop all rural census tracts.
+* Create a variable that measures the growth of median home value from 2000 to 2010. 
+* Omit cases that have a median home value less than $1,000 in 2000. 
+* Omit cases with growth rates above 200%.  
 
-Omit cases that have a median home value less than $10,000 in 2000. 
+Print summary statistics about median home values in 2000 and 2010. 
 
-Omit cases with growth rates above 200%. 
-
-
-
-# Part 2 - Community Health 
-
-Reconstruct your three community health scales from Lab 02. 
-
-Run three bivariate regressions predicting MHV growth with each community health metric, and one regression with all three metrics together. 
-
-Which metric, if any, best predicts change in home value? Does this fit with your expectations? 
+Visualize the distribution of changes across all urban tracts between 2000 and 2010 (these are replications of steps in the tutorial as well). 
 
 
-# Part 3 - Predict MHV Change 
 
-How select at least three census variables that you feel will be good predictors of change in MHV between 2000 and 2010. 
+# Part 2 - Predict MHV Change 
 
-Run the model while including metro-level fixed effects (**cbsa** name or FIPS). Make sure you check for variable skew and multicollearity and adjust accordingly. 
+Select three neighborhood characteristics from 2000 that you feel will be good predictors of change in MHV between 2000 and 2010. Note these are static snapshots of the tracts in 2000. 
 
-What are the results? Which factor was most important? Did it meet your expectations? Were there any variables that were not significant that you expected to be? 
+Explain why you selected the three variables and your theory about how they should related to home value changes. 
+
+Check for variable skew on each of the variables by generating a histogram and summary statistics. Correct skew if necessary. 
+
+Create a correlation plot for your three variables. Are any of them highly-correlated? Do you expect multicollinearity to be a problem? 
+
+Run two models - one with change in median home value (dollar amount) and one with median home value growth (percent change) from 2000 to 2010 as the dependent variables, and include your three year 2000 tract descriptors as covariates. 
+
+What are the results? Did any of the variables predict changes to home value? 
 
 Explain your findings to a general audience. 
 
 
 
+# Part 3 - Distribution of Home Values in Your City  
+
+**BONUS QUESTION:**
+
+This step will not be graded this week. 
+
+However, you will need to complete it for your final project, so make your life easier by doing it now and receiving feedback. 
+
+Load the dorling cartogram for your selected city. 
+
+Merge the current census dataset to your dorling shapefile. 
+
+```{r, eval=F}
+# geoid-01 is the hypothetical name of tract ID in the shapefile
+# geoid-02 is the hypothetical name of tract ID in the census dataset
+
+# dorling must be an sp shapefile 
+
+d <- merge( dorling, census, by.x="geoid-01", by.y="geoid-02", all.x=TRUE )
+```
+
+
+Create three choropleth maps:
+
+1. Home values in 2000 
+2. Home values in 2010 
+3. Change in home values 2000-2010
+
+First, display histograms of each variable to determine whether skew exists. 
+
+Select a reasonable binning strategy or create your own.  
+
+Use sequential scales for home values in 2000 and 2010, light for low, dark for high. Use a color ramp with 5 to 11 bins.  
+
+Use a divergent scale for change in home values, red (or an equivalent color) representing loss in value, blue (or an equivalent color) representing gain in value, and gray representing no change in value. Use a color ramp with 5 to 11 bins. 
+
+Do losses and gains cluster together on the map? Where do the largest gains occur? 
 
 
 

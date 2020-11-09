@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -200,6 +199,22 @@ window.buildTabsets = function(tocID) {
   });
 };
 
+</script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
 </script>
 <style type="text/css">.pagedtable {
 overflow: auto;
@@ -1474,6 +1489,98 @@ window.onload = function() {
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -1580,6 +1687,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -1618,8 +1726,8 @@ summary {
 <div id="TOC">
 <ul>
 <li><a href="#part-1---data">Part 1 - Data</a></li>
-<li><a href="#part-2---community-health">Part 2 - Community Health</a></li>
-<li><a href="#part-3---predict-mhv-change">Part 3 - Predict MHV Change</a></li>
+<li><a href="#part-2---predict-mhv-change">Part 2 - Predict MHV Change</a></li>
+<li><a href="#part-3---distribution-of-home-values-in-your-city">Part 3 - Distribution of Home Values in Your City</a></li>
 <li><a href="#submission-instructions">Submission Instructions</a><ul>
 <li><a href="#notes-on-knitting">Notes on Knitting</a></li>
 </ul></li>
@@ -1629,26 +1737,53 @@ summary {
 <p><br></p>
 <hr />
 <p><br></p>
-<p>This lab is designed to help you build your baseline model of neighborhood change before adding the policy variables in the next lab.</p>
+<p>This lab is designed to help you build a baseline model of neighborhood change.</p>
 <div id="part-1---data" class="section level1">
 <h1>Part 1 - Data</h1>
-<p>Similar to your previous lab, create a dataset that includes 2000 and 2010 census variables drop all rural census tracts.</p>
-<p>Create a variable that measures the growth of median home value from 2000 to 2010.</p>
-<p>Omit cases that have a median home value less than $10,000 in 2000.</p>
-<p>Omit cases with growth rates above 200%.</p>
+<p>Follow the steps from the tutorial to create a dataset that includes 2000 and 2010 census variables and make sure to:</p>
+<ul>
+<li>Drop all rural census tracts.</li>
+<li>Create a variable that measures the growth of median home value from 2000 to 2010.</li>
+<li>Omit cases that have a median home value less than $1,000 in 2000.</li>
+<li>Omit cases with growth rates above 200%.</li>
+</ul>
+<p>Print summary statistics about median home values in 2000 and 2010.</p>
+<p>Visualize the distribution of changes across all urban tracts between 2000 and 2010 (these are replications of steps in the tutorial as well).</p>
 </div>
-<div id="part-2---community-health" class="section level1">
-<h1>Part 2 - Community Health</h1>
-<p>Reconstruct your three community health scales from Lab 02.</p>
-<p>Run three bivariate regressions predicting MHV growth with each community health metric, and one regression with all three metrics together.</p>
-<p>Which metric, if any, best predicts change in home value? Does this fit with your expectations?</p>
-</div>
-<div id="part-3---predict-mhv-change" class="section level1">
-<h1>Part 3 - Predict MHV Change</h1>
-<p>How select at least three census variables that you feel will be good predictors of change in MHV between 2000 and 2010.</p>
-<p>Run the model while including metro-level fixed effects (<strong>cbsa</strong> name or FIPS). Make sure you check for variable skew and multicollearity and adjust accordingly.</p>
-<p>What are the results? Which factor was most important? Did it meet your expectations? Were there any variables that were not significant that you expected to be?</p>
+<div id="part-2---predict-mhv-change" class="section level1">
+<h1>Part 2 - Predict MHV Change</h1>
+<p>Select three neighborhood characteristics from 2000 that you feel will be good predictors of change in MHV between 2000 and 2010. Note these are static snapshots of the tracts in 2000.</p>
+<p>Explain why you selected the three variables and your theory about how they should related to home value changes.</p>
+<p>Check for variable skew on each of the variables by generating a histogram and summary statistics. Correct skew if necessary.</p>
+<p>Create a correlation plot for your three variables. Are any of them highly-correlated? Do you expect multicollinearity to be a problem?</p>
+<p>Run two models - one with change in median home value (dollar amount) and one with median home value growth (percent change) from 2000 to 2010 as the dependent variables, and include your three year 2000 tract descriptors as covariates.</p>
+<p>What are the results? Did any of the variables predict changes to home value?</p>
 <p>Explain your findings to a general audience.</p>
+</div>
+<div id="part-3---distribution-of-home-values-in-your-city" class="section level1">
+<h1>Part 3 - Distribution of Home Values in Your City</h1>
+<p><strong>BONUS QUESTION:</strong></p>
+<p>This step will not be graded this week.</p>
+<p>However, you will need to complete it for your final project, so make your life easier by doing it now and receiving feedback.</p>
+<p>Load the dorling cartogram for your selected city.</p>
+<p>Merge the current census dataset to your dorling shapefile.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># geoid-01 is the hypothetical name of tract ID in the shapefile</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># geoid-02 is the hypothetical name of tract ID in the census dataset</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># dorling must be an sp shapefile </span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>d &lt;-<span class="st"> </span><span class="kw">merge</span>( dorling, census, <span class="dt">by.x=</span><span class="st">&quot;geoid-01&quot;</span>, <span class="dt">by.y=</span><span class="st">&quot;geoid-02&quot;</span>, <span class="dt">all.x=</span><span class="ot">TRUE</span> )</span></code></pre></div>
+<p>Create three choropleth maps:</p>
+<ol style="list-style-type: decimal">
+<li>Home values in 2000</li>
+<li>Home values in 2010</li>
+<li>Change in home values 2000-2010</li>
+</ol>
+<p>First, display histograms of each variable to determine whether skew exists.</p>
+<p>Select a reasonable binning strategy or create your own.</p>
+<p>Use sequential scales for home values in 2000 and 2010, light for low, dark for high. Use a color ramp with 5 to 11 bins.</p>
+<p>Use a divergent scale for change in home values, red (or an equivalent color) representing loss in value, blue (or an equivalent color) representing gain in value, and gray representing no change in value. Use a color ramp with 5 to 11 bins.</p>
+<p>Do losses and gains cluster together on the map? Where do the largest gains occur?</p>
 <hr />
 <p><br></p>
 </div>
@@ -1709,7 +1844,7 @@ blockquote {
         <li>Creative Common License:</li>
         <li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> (CC BY-NC-SA 4.0)</a></li>
         <br>
-        <li>CPP 528 <a href="https://ds4ps.org/cpp-528-spr-2020/" target="_blank">Foundations of Data Science III</a></li>
+        <li>CPP 529 <a href="https://ds4ps.org/cpp-529-fall-2020/" target="_blank">Community Analytics</a></li>
         <li>Part of the <a href="http://ds4ps.org/ms-prog-eval-data-analytics/" target="_blank">MS in Evaluation and Analytics</a></li>
         <li>@ <a href="https://asuonline.asu.edu/online-degree-programs/graduate/program-evaluation-and-data-analytics-ms/" target="_blank">Arizona State University</a></li>
         <br>

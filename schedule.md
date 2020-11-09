@@ -781,7 +781,9 @@ For this project we will measure neighborhood change as a change in median home 
 
 Home values are a reliable measure of qualitative changes to a neighborhood because the sales price of a home already takes into account all improvements to the home, as well as all improvements to the surrounding community like new parks, improves schools, and enhanced amenities like gyms and grocery stores. These are called "hedonic pricing models" in economics. Things like income levels or unemployment rates can change independently of improvements or decline in the community, so they are not great measures of neighborhood change. Home values, on the other hand, will typically increase only if demand for the neighborhood has increased, which typically occurs when the neighborhood or surrounding communities improve. 
 
-Read the [tutorial on modeling changes in home value](../LABS/lab-05-tutorial-v2.html). 
+Read the tutorial on modeling changes in home value:
+
+<a class="uk-button uk-button-default" href="../LABS/lab-05-tutorial-v2.html">NHOOD CHANGE TUTORIAL</a>
 
 
 <!---
@@ -795,6 +797,9 @@ The first video below provides a general overview of neighborhood change and gen
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b4GgKBhltu8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
+
+<a class="uk-button uk-button-default" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
+
 
 -->
 

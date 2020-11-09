@@ -767,20 +767,28 @@ Chetty's work has brought new insight to the question:
 # Week 5 - Visualizing Neighborhood Changes  
 
 
+
+
+## Unit Overview
+
+
+In this unit, a brief video introduction is given related to neighborhood change and gentrification, serving as important foundation for our data science work using census data to visualize changes in neighborhoods over time.  The second goal of this unit is to offer a set of "good practices" when creating maps to display spatial information.  
+
+
+**Neighborhood Change**
+
+For this project we will measure neighborhood change as a change in median home values in a community. 
+
+Home values are a reliable measure of qualitative changes to a neighborhood because the sales price of a home already takes into account all improvements to the home, as well as all improvements to the surrounding community like new parks, improves schools, and enhanced amenities like gyms and grocery stores. These are called "hedonic pricing models" in economics. Things like income levels or unemployment rates can change independently of improvements or decline in the community, so they are not great measures of neighborhood change. Home values, on the other hand, will typically increase only if demand for the neighborhood has increased, which typically occurs when the neighborhood or surrounding communities improve. 
+
+Read the [tutorial on modeling changes in home value](../LABS/lab-05-tutorial-v2.html). 
+
+
 <!---
 
-*** { @unit = "", @title = "Unit Overview", @foldout  }
-
-## Description 
-
-
-In this unit, a brief video introduction is given related to neighborhood change and gentficication, serving as important foundation for our data science work using census data to visualize changes in neighborhoods over time.  The second goal of this unit is to offer a set of "good practices" when creating maps to display spatial information.  
-
-*** { @unit = "", @title = "Neighborhood Change and Gentficication", @lecture, @foldout  }
+**Neighborhood Change and Gentrification**
 
 The first video below provides a general overview of neighborhood change and gentrification, including: defintions, debates,  policies, and a case study example.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-master/raw/master/lectures/Gentrification_and_affordable_housing_2016.pdf).
-
-
 
 <br>
 
@@ -788,11 +796,11 @@ The first video below provides a general overview of neighborhood change and gen
 
 <br>
 
-*** { @unit = "", @title = "Visualization Recap", @lecture, @foldout  }
+-->
 
-The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-master/raw/master/lectures/Lecture-Visual_Narrative- Choropleth_and_Dot_Density_Maps.pdf).
+**Visualization**
 
-
+The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-fall-2020/raw/master/lectures/p-05-visual-narrative.pdf).
 
 
 <br>
@@ -801,12 +809,16 @@ The video below describes the importance of creating maps that accurately convey
 
 <br>
 
-*** { @unit = "Due Nov 20th", @title = "Lab 05", @assignment, @foldout  }
 
-<br>
-<br>
 
-## Lab Instructions
+## Lab 05
+
+**Instructions**
+
+
+<a class="uk-button uk-button-default" href="../LABS/lab-05-instructions.html">LAB-05 Instructions</a>
+
+<!---
 
 There are 3 parts to this week's lab.  The first two parts are largely a review and a primer of what we've done already and where we are heading.  The Rmarkdown file and HTML file is below.  
 
@@ -820,16 +832,23 @@ Access Part 3 Lab 2 here: [RMD](https://github.com/DS4PS/cpp-529-master/raw/mast
 
 Please submit your .rmd and .html files for Part 3 of the lab only, including your answers to the questions.  
 
+-->
 
-## Submit Solutions to Canvas:
+**Submit Solutions to Canvas**
+
+After you have completed Lab 05 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
-<br>
-<br>
+**Due {{page.labs.lab-05}}**
 
 
-*** { @unit = "Due Nov 20th", @title = "Yellowdig Discussion Assignment: Predicting Neighborhood Change", @assignment, @foldout  }
+
+<br>
+
+<!---
+
+## Yellowdig Discussion Assignment: Predicting Neighborhood Change", @assignment, @foldout  }
 
 <br>
 <br>
@@ -850,13 +869,16 @@ Please submit your .rmd and .html files for Part 3 of the lab only, including yo
 
 3.  What other information would you like to have that you think would be an important predictor of gentrification?
 
+-->
+
+
 
 <br> 
 --------------------------------------------------------------------------------------------------- 
 <br>
 
 
--->
+
 
 
 

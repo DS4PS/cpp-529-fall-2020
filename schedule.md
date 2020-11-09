@@ -798,7 +798,6 @@ The first video below provides a general overview of neighborhood change and gen
 
 <br>
 
-<a class="uk-button uk-button-default" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
 
 
 -->
@@ -814,6 +813,7 @@ The video below describes the importance of creating maps that accurately convey
 
 <br>
 
+<a class="uk-button uk-button-default" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
 
 
 ## Lab 05

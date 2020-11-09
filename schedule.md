@@ -853,12 +853,12 @@ After you have completed Lab 05 you can submit it via Canvas using the link belo
 
 <!---
 
-## Yellowdig Discussion Assignment: Predicting Neighborhood Change", @assignment, @foldout  }
+Yellowdig Discussion
 
 <br>
 <br>
 
-### Required Readings
+**Required Readings**
 
 1. Using Algorithms To Predict Gentrification [(Link)](https://www.citylab.com/solutions/2017/02/algorithms-that-predict-gentrification/516945/)
 
@@ -866,7 +866,7 @@ After you have completed Lab 05 you can submit it via Canvas using the link belo
 
 
 
-### Questions
+**Questions**
 
 1. Provide a 2-3 sentence summary of the above two articles (research topic, data, method, findings). 
 
@@ -899,7 +899,7 @@ After you have completed Lab 05 you can submit it via Canvas using the link belo
 
 
 
-# Week 6 - OLS Regression and Models of Neighborhood Change 
+# Week 6 - Models of Neighborhood Change 
 
 
 <!---

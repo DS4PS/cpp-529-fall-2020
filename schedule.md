@@ -13,7 +13,7 @@ yellowdig:
   post-03: 'Monday, Nov 2nd' 
   post-04: 'Monday, Nov 9th' 
   post-05: 'Monday, Nov 16th' 
-  post-06: 'Monday' 
+  post-06: 'Monday, Nov   
   post-07: 'Monday' 
   
 
@@ -27,10 +27,10 @@ labs:
   
   
 projects: 
-  r-package:  'Saturday, September 19th'
-  report-template:  'Friday, October 9th'
+  dashboard:  'Friday, October 9th'
   code-through:  'Friday, October 9th'
-  
+
+pdf-root-url: 'https://github.com/DS4PS/cpp-529-fall-2020/raw/main/lectures/'
 ---
 
 <!--- 
@@ -790,7 +790,7 @@ Read the tutorial on modeling changes in home value:
 
 **Neighborhood Change and Gentrification**
 
-The first video below provides a general overview of neighborhood change and gentrification, including: defintions, debates,  policies, and a case study example.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-master/raw/master/lectures/Gentrification_and_affordable_housing_2016.pdf).
+The first video below provides a general overview of neighborhood change and gentrification, including: defintions, debates,  policies, and a case study example.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-fall-2020/raw/main/lectures/p-05-visual-narrative.pdf).
 
 <br>
 
@@ -804,7 +804,7 @@ The first video below provides a general overview of neighborhood change and gen
 
 **Visualization**
 
-The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-fall-2020/raw/master/lectures/p-05-visual-narrative.pdf).
+The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)]({{pdf-root-url}}p-05-visual-narrative.pdf).
 
 
 <br>

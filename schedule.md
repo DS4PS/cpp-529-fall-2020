@@ -804,7 +804,7 @@ The first video below provides a general overview of neighborhood change and gen
 
 **Visualization**
 
-The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)]({{pdf-root-url}}p-05-visual-narrative.pdf).
+The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)]({{ page.pdf-root-url }}p-05-visual-narrative.pdf).
 
 
 <br>

@@ -13,7 +13,7 @@ yellowdig:
   post-03: 'Monday, Nov 2nd' 
   post-04: 'Monday, Nov 9th' 
   post-05: 'Monday, Nov 16th' 
-  post-06: 'Monday, Nov   
+  post-06: 'Monday, Nov' 
   post-07: 'Monday' 
   
 
@@ -31,6 +31,7 @@ projects:
   code-through:  'Friday, October 9th'
 
 pdf-root-url: 'https://github.com/DS4PS/cpp-529-fall-2020/raw/main/lectures/'
+
 ---
 
 <!--- 

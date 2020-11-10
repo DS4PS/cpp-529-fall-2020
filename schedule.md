@@ -666,6 +666,7 @@ The purpose of Lab 4 is to replicate the work you did for the previous lab, but 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
+**Due {{page.labs.lab-04}}**
 
 <br>
 

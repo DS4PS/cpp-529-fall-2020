@@ -811,10 +811,9 @@ The video below describes the importance of creating maps that accurately convey
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AWwOYNvxK-A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
-
 <a class="uk-button uk-button-default" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
 
+<br>
 
 ## Lab 05
 

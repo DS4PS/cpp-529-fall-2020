@@ -32,6 +32,7 @@ saveRDS( d2, "ltdb_std_2010_sample.rds" )
 ```r
 library( geojsonio )
 library( sp )
+library( sf )
 
 github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
 phx <- geojson_read( x=github.url,  what="sp" )

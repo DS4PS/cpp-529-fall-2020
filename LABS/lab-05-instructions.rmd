@@ -87,6 +87,27 @@ d <- merge( dorling, census, by.x="geoid-01", by.y="geoid-02", all.x=TRUE )
 ```
 
 
+You may have to convert tract GEOIDs so they follow the same format (all numbers): 
+
+```{r, eval=F}
+x <- d$tractid 
+head( x )
+# [1] "fips-01-001-020100" "fips-01-001-020200" "fips-01-001-020300"
+# [4] "fips-01-001-020400" "fips-01-001-020500" "fips-01-001-020600"
+
+x <- gsub( "fips", "", x )
+x <- gsub( "-", "", x )
+head( x )
+# [1] "01001020100" "01001020200" "01001020300" "01001020400" "01001020500"
+# [6] "01001020600"
+
+x <- as.numeric( x )
+
+# remember to add the variable back to the dataset
+d$tractid2 <- x 
+```
+
+
 Create three choropleth maps:
 
 1. Home values in 2000 

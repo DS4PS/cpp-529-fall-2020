@@ -119,9 +119,20 @@ these.msp <- crosswalk$msaname == "MINNEAPOLIS-ST. PAUL, MN-WI"
 these.fips <- crosswalk$fipscounty[ these.msp ]
 these.fips <- na.omit( these.fips )
 
+head( these.fips ) %>% pander()
+```
+
+The Minneapolis-St. Paul Metro spans two states, so we need two Census API calls: 
+
+```{r}
 state.fips <- substr( these.fips, 1, 2 )
 county.fips <- substr( these.fips, 3, 5 )
 
+cbind( these.fips, state.fips, county.fips ) %>% pander()
+```
+
+
+```{r}
 msp.pop1 <-
 get_acs( geography = "tract", variables = "B01003_001",
          state = "27", county = county.fips[state.fips=="27"], geometry = TRUE ) %>% 
@@ -214,6 +225,8 @@ tm_shape( msp_dorling ) +
 
 Improve the aestetics with a bounding box. I use the **locator()** function to get location. 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jx5y0EdIUT4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```{r}
 tm_shape( msp_dorling ) + 

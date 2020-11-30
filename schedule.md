@@ -23,7 +23,7 @@ labs:
   lab-03:  'Wednesday, Nov 4th'
   lab-04:  'Wednesday, Nov 11th'
   lab-05:  'Wednesday, Nov 18th'
-  lab-06:  'OPTIONAL'
+  lab-06:  'date: LAB IS OPTIONAL'
   
   
 projects: 

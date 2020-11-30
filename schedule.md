@@ -13,8 +13,8 @@ yellowdig:
   post-03: 'Monday, Nov 2nd' 
   post-04: 'Monday, Nov 9th' 
   post-05: 'Monday, Nov 16th' 
-  post-06: 'Monday, Nov' 
-  post-07: 'Monday' 
+  post-06: 'Monday, Nov 23rd' 
+  post-07: 'Monday, Nov 30th' 
   
 
 labs:
@@ -23,12 +23,12 @@ labs:
   lab-03:  'Wednesday, Nov 4th'
   lab-04:  'Wednesday, Nov 11th'
   lab-05:  'Wednesday, Nov 18th'
-  lab-06:  'Wednesday, Nov 25th'
+  lab-06:  'OPTIONAL'
   
   
 projects: 
-  dashboard:  'Friday, October 9th'
-  code-through:  'Friday, October 9th'
+  dashboard:  'Friday, December 4th'
+  code-through:  'Friday, December 4th'
 
 pdf-root-url: 'https://github.com/DS4PS/cpp-529-fall-2020/raw/main/lectures/'
 
@@ -592,6 +592,41 @@ After you have completed Lab 3 you can submit it via Canvas using the link below
 **Due {{page.labs.lab-03}}**
 
 <br>
+
+**Notes on Saving Your Cartogram for Future Use**
+
+You will be re-using your cartogram in future labs. You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. 
+
+<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
+
+
+```r
+library( geojsonio )
+
+phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
+geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
+```
+
+Load your cartogram: 
+
+```r
+library( geojsonio )
+library( sp )
+
+# load from github
+github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
+phx <- geojson_read( x=github.url,  what="sp" )
+
+# from local file path
+phx <- geojson_read( "data/phx_dorling.geojson", what="sp" )
+
+plot( phx )
+```
+
+
+
+
+<br>
 <br>
 
 
@@ -903,6 +938,24 @@ Yellowdig Discussion
 # Week 6 - Models of Neighborhood Change 
 
 
+## Lab 06
+
+**Instructions**
+
+<a class="uk-button uk-button-default" href="../LABS/lab-05-instructions.html">LAB-05 Instructions</a>
+
+
+**Submit Solutions to Canvas**
+
+After you have completed Lab 05 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+**Due {{page.labs.lab-06}}**
+
+
+
+
 <!---
 
 *** { @unit = "", @title = "Unit Overview", @foldout  }
@@ -1015,6 +1068,7 @@ Please submit your .rmd and .html files on Canvas, including your answers to the
 
 
 
+
 <!--- 
 ######################################################
 ####
@@ -1026,26 +1080,63 @@ Please submit your .rmd and .html files on Canvas, including your answers to the
 
 # Week 7 - Final Project 
 
+For the final project, you will extend the work you've done over the course of the semester by creating a dynamic dashboard that will be used to detect neighborhood change at the census tract level for your chosen metroplitan statistical area (MSA).  
+
+To this end, you will combine components of Lab 4 that focuses on neighborhood clusters and Labs 5-6 which describe or explain neighborhood change. 
+
+The goal of your dynamic dashboard is to empower members of the City Council to better understand economic and demographic trends impacting the communities they govern.  
+
 <!--- 
+As part of the final project, you will also record a video presentation of 15-20 minutes and give an oral presentation of your dynamic dashboard.  Be sure to highlight your findings, and policy implications and recommendations.  You may record the video presentation on your computer and then upload it to [youtube](https://www.youtube.com/upload). 
+-->
 
-*** { @unit = "Due Dec 2nd", @title = "Explainer Assignment", @assignment, @foldout  }
+Submission: You will submit the .rmd file, the .html file, and the link to your youtube video to Canvas. 
 
-<br>
-<br>
+
+**Notes on Saving Your Cartogram to File**
+
+You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. Saving the cartogram will simplify the data steps needed for your final dashboard: 
+
+<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
+
+
+```r
+library( geojsonio )
+
+phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
+geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
+```
+
+Load your cartogram: 
+
+```r
+library( geojsonio )
+library( sp )
+
+# load from github
+github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
+phx <- geojson_read( x=github.url,  what="sp" )
+
+# from local file path
+phx <- geojson_read( "data/phx_dorling.geojson", what="sp" )
+
+plot( phx )
+```
+
 
 ## Code-Through
  
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-529-master/LABS/code-through-assignment.html">Code-Through Instructions</a>
+<a class="uk-button uk-button-default" href="../LABS/code-through-assignment.html">Code-Through Instructions</a>
 
 ## Submit to Canvas:
 
-<a class="uk-button uk-button-primary" href="">SUBMIT CODE-THROUGH</a>
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT CODE-THROUGH</a>
 
 ## Post on Yellowdig
 
 Publish your code-through as an RPub or shiny app. Share you link on YellowDig. 
 
-<a class="uk-button uk-button-primary" href="https://www.yellowdig.com/board/42045">Yellowdig</a>
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">Yellowdig</a>
 
 
 
@@ -1056,15 +1147,6 @@ Publish your code-through as an RPub or shiny app. Share you link on YellowDig.
 <br>
 <br>
 
-For the final project, you will extend the work you've done over the course of the semester by creating a dynamic dashboard that will be used to detect neighborhood change and gentrification at the census tract level for your metroplitan statistical area (MSA) of choice.  
-
-To this end, you will combine aspects into your final project from Lab 4 that focuses on your selected MSA to perform cluster analysis and create a dorling map of your 2010 cluster and Lab 6 (descriptives, regression, clustering, clustering prediction, and sankey charting). 
-
-The goal of your dynamic dashboard is to empower members of the City Council to better understand economic and demographic trends impacting the communities they govern.  
-
-As part of the final project, you will also record a video presentation of 15-20 minutes and give an oral presentation of your dynamic dashboard.  Be sure to highlight your findings, and policy implications and recommendations.  You may record the video presentation on your computer and then upload it to [youtube](https://www.youtube.com/upload). 
-
-Submission: You will submit the .rmd file, the .html file, and the link to your youtube video to Canvas. 
 
 
 

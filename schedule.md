@@ -942,7 +942,7 @@ Yellowdig Discussion
 
 **Instructions**
 
-<a class="uk-button uk-button-default" href="../LABS/lab-05-instructions.html">LAB-05 Instructions</a>
+<a class="uk-button uk-button-default" href="../LABS/lab-06-instructions.html">LAB-06 Instructions</a>
 
 
 **Submit Solutions to Canvas**

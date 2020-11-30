@@ -947,7 +947,7 @@ Yellowdig Discussion
 
 **Submit Solutions to Canvas**
 
-After you have completed Lab 05 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
+Upload your RMD and your HTML files to the appropriate lab submission link. 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 

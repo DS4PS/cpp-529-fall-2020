@@ -1084,6 +1084,13 @@ Please submit your .rmd and .html files on Canvas, including your answers to the
 
 # Week 7 - Final Project 
 
+
+## Dashboard Instructions 
+
+*To download the template right-click on the file and select "save" and make sure you save it using a .rmd extension only (it will try to add an extra .txt extension at the end sometimes when saving).*
+
+<a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-529-fall-2020/main/LABS/nhood-change-dashboard-template.rmd">DASHBOARD TEMPLATE</a>
+
 For the final project, you will extend the work you've done over the course of the semester by creating a dynamic dashboard that will be used to detect neighborhood change at the census tract level for your chosen metroplitan statistical area (MSA).  
 
 To this end, you will combine components of Lab 4 that focuses on neighborhood clusters and Labs 5-6 which describe or explain neighborhood change. 
@@ -1096,20 +1103,90 @@ As part of the final project, you will also record a video presentation of 15-20
 
 Submission: You will submit the .rmd file, the .html file, and the link to your live shiny dashboard. 
 
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT CODE-THROUGH</a>
 
 
-## Notes on Saving Your Dorling Cartogram to File
+### Data Steps 
 
-You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. Saving the cartogram will simplify the data steps needed for your final dashboard: 
+In order to create the dashboard you will need to incorporate data from previous labs into a single dorling file. 
 
-<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
+**Create Your Dorling Cartogram**
+
+First, re-create your dorling cartogram for your selected city. Here I am naming it "phx" for Phoenix. 
+
+*See Lab 04 for all steps:*
+
+```r
+# project map and remove empty tracts
+phx.sp <- spTransform( msp.sp, CRS("+init=epsg:3395"))
+phx.sp <- phx.sp[ phx.sp$POP != 0 & (! is.na( phx.sp$POP )) , ]
+
+# convert census tract polygons to dorling cartogram
+
+phx.sp$pop.w <- phx.sp$POP / 9000    # standardizes it to max of 1.5
+phx <- cartogram_dorling( x=phx.sp, weight="pop.w", k=0.05 )
+plot( phx )
+```
+
+Make sure that your map file is an **sp** "spatial object" file type and not an **sf** "simple features" file type:
+
+```r
+class( phx )
+# sp
+```
+
+You can merge data to sp objects easily with the code below, but not to sf objects. 
+
+
+**Add Clusters**
+
+Create your neighborhood clusters from Lab 04 and save the groups as a variable called "cluster":
+
+```r
+# library( mclust )
+set.seed( 1234 )
+fit <- Mclust( d3 )
+phx$cluster <- fit$classification
+```
+
+**Add Census Data**
+
+Add all of the census data to your shapefile: 
+
+```r
+URL1 <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-2000.rds"
+d1 <- readRDS( gzcon( url( URL1 ) ) )
+
+URL2 <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-2010.rds"
+d2 <- readRDS( gzcon( url( URL2 ) ) )
+
+URLmd <- "https://github.com/DS4PS/cpp-529-fall-2020/raw/main/LABS/data/rodeo/LTDB-META-DATA.rds"
+md <- readRDS( gzcon( url( URLmd ) ) )
+
+d1 <- select( d1, - year )
+d2 <- select( d2, - year )
+
+d <- merge( d1, d2, by="tractid" )
+d <- merge( d, md, by="tractid" )
+
+phx <- merge( phx, d, by.x="GEOID", by.y="tractid", all.x=T )
+```
+
+Recreate your model variables like change in median home value and growth of median home value. Add these to the dataset. 
+
+
+**Save Your Dorling Cartogram to File**
+
+Save your cartogram as a geojson map file so that you can re-load it when you need it. 
+
+Saving the cartogram will simplify the data steps needed for your final dashboard: 
 
 
 ```r
 library( geojsonio )
 
-phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
-geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
+phx <- spTransform( phx, CRS("+proj=longlat +datum=WGS84") )
+geojson_write( phx, file="phx_dorling.geojson", geometry="polygon" )
 ```
 
 Load your cartogram: 
@@ -1128,12 +1205,13 @@ phx <- geojson_read( "data/phx_dorling.geojson", what="sp" )
 plot( phx )
 ```
 
+<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
 
 
-## Dashboard Instructions
 
-Updating templates...
-
+<br>
+<hr>
+<br>
 
 ## Code-Through Assignment 
  

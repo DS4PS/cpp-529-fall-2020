@@ -1090,10 +1090,11 @@ The goal of your dynamic dashboard is to empower members of the City Council to 
 As part of the final project, you will also record a video presentation of 15-20 minutes and give an oral presentation of your dynamic dashboard.  Be sure to highlight your findings, and policy implications and recommendations.  You may record the video presentation on your computer and then upload it to [youtube](https://www.youtube.com/upload). 
 -->
 
-Submission: You will submit the .rmd file, the .html file, and the link to your youtube video to Canvas. 
+Submission: You will submit the .rmd file, the .html file, and the link to your live shiny dashboard. 
 
 
-**Notes on Saving Your Cartogram to File**
+
+## Notes on Saving Your Dorling Cartogram to File
 
 You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. Saving the cartogram will simplify the data steps needed for your final dashboard: 
 
@@ -1124,15 +1125,21 @@ plot( phx )
 ```
 
 
-## Code-Through
+
+## Dashboard Instructions
+
+Updating templates...
+
+
+## Code-Through Assignment 
  
 <a class="uk-button uk-button-default" href="../LABS/code-through-assignment.html">Code-Through Instructions</a>
 
-## Submit to Canvas:
+**Submit to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT CODE-THROUGH</a>
 
-## Post on Yellowdig
+**Post on Yellowdig:**
 
 Publish your code-through as an RPub or shiny app. Share you link on YellowDig. 
 
@@ -1142,46 +1149,11 @@ Publish your code-through as an RPub or shiny app. Share you link on YellowDig.
 
 
 
-*** { @unit = "Due Dec 6th", @title = "DASHBOARD", @assignment, @foldout }
-
-<br>
-<br>
 
 
 
 
 
-
-
-## Instructions
-
-The skeleton for the final project using `flex_dashboard` can be downloaded here [(LINK to FINAL PROJECT .RMD)](https://www.dropbox.com/s/edmitdjdsdrm54z/Final_Project_Outline_Storyboard.Rmd?dl=1).  The first thing you should do after downloading the file, is to open it and then knit it in order to make sure it compiles properly.  If it does not, check that all R packages are updated.  
-
-You have two major coding tasks denoted as `edit me` in R chunks: (1) subset all census data from Lab 6 to your chosen MSA from Lab 4; and (2) merge spatial information from Lab 4 to census data from Lab 6.  
-
-In addition to the two coding task you must also describe your research project and interpret the results.  Specifically, when viewing the knitted dashboard, you should notice latin placeholder text in some areas.  The latin placeholder text is created using `r lorem::ipsum(paragraphs = 1)` that you can see in the .rmd file, followed by some instructions enclosed within notes (<!---  -->) that are commented out.  
-
-You will need to delete each instance of `r lorem::ipsum(paragraphs = 1)` placeholder text in the .rmd file and provide your own answers based on the instructions contained within notes (<!---  -->).  There are ***11*** instances of latin placeholder text that you need to remove and provide answers.   
-
-<!---
-
-Once you have completed the final project, you should record a well-rehearsed presentation of 15-20 minutes targeting local government and community leaders. You may post the video on [youtube](https://www.youtube.com/upload).  When uploading to youtube, you can select the unlisted option to keep the video from being found via search, rather it can only be viewed if you have the link.
-
-
-Submission: You will submit the .rmd file, the .html file, and the link to your youtube video to Canvas. 
-
-
-
-
-## Submit Solutions to Canvas:
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
-
-<br>
-<br>
-
-
--->
 
 
 

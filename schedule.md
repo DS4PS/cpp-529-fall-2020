@@ -1087,9 +1087,11 @@ Please submit your .rmd and .html files on Canvas, including your answers to the
 
 ## Dashboard Instructions 
 
-*To download the template right-click on the file and select "save" and make sure you save it using a .rmd extension only (it will try to add an extra .txt extension at the end sometimes when saving).*
+[Final Project Overview](https://asu.zoom.us/rec/share/mJwULrh8gjB0HFsBpv83sF3dk9VXq2AvD7jtiWMYUnUtvkAWHic_-Sw0gB9LinPe.3OcO4O43czcd9lse?startTime=1606784948000)
 
 <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-529-fall-2020/main/LABS/nhood-change-dashboard-template.rmd">DASHBOARD TEMPLATE</a>
+
+*To download the template right-click on the file and select "save" and make sure you save it using a .rmd extension only (it will try to add an extra .txt extension at the end sometimes when saving).*
 
 For the final project, you will extend the work you've done over the course of the semester by creating a dynamic dashboard that will be used to detect neighborhood change at the census tract level for your chosen metroplitan statistical area (MSA).  
 

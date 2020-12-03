@@ -852,11 +852,9 @@ The video below describes the importance of creating maps that accurately convey
 <br>
 <hr>
 
-<a class="uk-button uk-button-default" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
+<a class="uk-button uk-button-default" width="200" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
 
-<br>
-
-<a class="uk-button uk-button-default" href="../choropleth-color-scales.html">Color Scale Intuition</a>
+<a class="uk-button uk-button-default" width="200" href="../choropleth-color-scales.html">COLOR SCALE INTUITION</a>
 
 <hr>
 

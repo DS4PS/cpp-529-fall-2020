@@ -570,87 +570,51 @@ The second video below introduces other popular clustering methods -- Hierarchic
 
 **Overview** 
 
-The purpose of Lab 3 is to show you how to apply model-based clustering to classify Phoenix neighborhoods into meaningful groups.  Lab 3 is a code-through only and will not require you to modify any code as was the case in Lab 2.  
+The purpose of Lab 3 is to show you how to apply model-based clustering to classify Phoenix neighborhoods into meaningful groups. 
 
+First, read-through the tutorial below on identifying coherent "neighborhoods" or groups using clustering. 
+
+Next, download the Rmarkdown file ([RMD](https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial.rmd)) and execute each code chunk step-by-step to understand each stage of the process. You do not need to submit a knitted file, though.   
+
+You can gain some intuition for the clustering algorithms by looking at examples of how botanists might create "sub-species" by finding groups of plants that share similar characteristics:
+
+[Clustering Example](https://shiny.rstudio.com/gallery/kmeans-example.html)
+
+For any given number of groups that you desire the algorithm will identify how to split the data up so that it maximizes within-group similarities and between-group differences. 
 
 **Lab Instructions**
 
-You may access Lab 3 instructions by clicking on the LAB-03 Instructions below.   First view the instructions and see some of the code chunks and output that you will create yourself.  Next, download the Rmardown file ([RMD](https://ds4ps.org/cpp-529-master/labs/lab-03-tutorial.rmd)) and execute each code chunk step-by-step to understand each stage of the process.  
+**PART 01**: Labeling Phoenix Neighborhood Types
 
+Once you have replicated the steps of the tutorial, you will have assigned Phoenix census tracts into 8 unique groups.  
 
-***Reminder:*** Name your files according to the convention: Lab-##-LastName.xxx
-
-
-<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
-
-
-After you have completed Lab 3 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
-
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
-
-**Due {{page.labs.lab-03}}**
-
-<br>
-
-**Notes on Saving Your Cartogram for Future Use**
-
-You will be re-using your cartogram in future labs. You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. 
-
-<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
-
-
-```r
-library( geojsonio )
-
-phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
-geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
-```
-
-Load your cartogram: 
-
-```r
-library( geojsonio )
-library( sp )
-
-# load from github
-github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
-phx <- geojson_read( x=github.url,  what="sp" )
-
-# from local file path
-phx <- geojson_read( "data/phx_dorling.geojson", what="sp" )
-
-plot( phx )
-```
-
-
-
-
-<br>
-<br>
-
-
-## Yellowdig Topic
-
-**Identifying (Naming) Phoenix Neighborhood Types**
-
-Nice job! You have successfully completed lab assignment 3 that relies on a host of census variables and employs model-based clustering (mclust) to group Phoenix neighborhoods into 8 unique categories.  
-
-You are now ready for the fun part -- giving a `label` to each group. To do this, you need to visually inspect which census variables are prominent in each group and make an informed opinion about what type of label to apply.  
+You are now ready for the fun part -- giving a label to each group. To do this, you need to visually inspect which census variables are prominent in each group and make an informed opinion about what type of label to apply.  
 
 Labels should be informative. There will always be a trade-off between precision labels (literal and dry but unambiguous) and colorful labels (metaphors, playful, easy to remember). Your task is to create a set of labels that balances these two considerations without offending anyone with stereotypes (please be respectful). 
 
-> For your discussion topic this week, you will  propose labels for Groups 1-8 constructed during Lab 3 using cluster analysis **Image 1** below.  In order to provide an appropriate label, you must do a careful inspection of how the census variables overall relate to a particular group **Image 2**. A good label will be catchy and descriptive of the population within the neighborhood cluster.
+> Propose labels for Groups 1-8 constructed during Lab 3 using cluster analysis **Image 1** below.  In order to provide an appropriate label, you must do a careful inspection of how the census variables overall relate to a particular group **Image 2**. A good label will be catchy and descriptive of the population within the neighborhood cluster.
 
-Post your reflection as a new pin: 
+**PART 02**: Other Neighborhood Cluster Models
 
----
+Skim the following two papers: 
 
-<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+*Market Value Analysis: A Data-Based Approach to Understanding Urban Housing Markets. pp 49-59* [ [**PDF**](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/MVA-DD-App-to-Strengthening-Neighborhoods.pdf) ]
 
-**Post by {{page.yellowdig.post-03}}**
+*Delmelle, E. C. (2017). Differentiating pathways of neighborhood change in 50 US metropolitan areas. Environment and planning A, 49(10), 2402-2424.* [ [**PDF**](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/differentiating-pathways-of-neighborhood-change.pdf) ]
 
----
+These data-driven approaches that use machine-learning algorithms to "discover" coherent communities within the city by grouping census tracks into groups that minimize within-group differences and maximize between-group differences. 
+
+A data-driven approach to understanding neighborhood change requires use to (1) define "neighborhoods", or groups of census tracks in the data that are very similar, and (2) use those group characteristics at a point in time to predict how the "neighborhood" might change in the future. Both of the papers present variations on Step (1) above.
+
+Read the two papers then answer the following questions:
+
+
+1. **What type of data was used for clustering in the MVA paper (paper 1)? What do the variables measure, and how many were used?**
+2. **What type of data was used for clustering in the Differentiating Pathways paper (paper 2)? What do the variables measure, and how many were used?**
+3. **Table 1 in Differentiating Pathways (page 2412) is equivalent to the tables you used for PART 01 above except it uses a colored table instead of a chart. Can you identify one neighborhood type from this model that is similar to a neighborhood type that you labeled above?**
+
+
+**Write up your responses in a word document and submit via Canvas.**
 
 <br>
 
@@ -659,12 +623,56 @@ Image 1:
 ![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
 
 <br> 
+
 Image 2:
+
 ![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
 
 <br>
 
---------------------------------------------------------------------------------------------------- 
+
+
+
+<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
+
+
+After you have completed Lab 3 you can submit it via Canvas using the link below. You do not need to include your RMD/HTML file for this step. 
+
+*Reminder:* Name your file according to the convention: Lab-##-LastName.xxx
+
+---
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+**Due {{page.labs.lab-03}}**
+
+---
+
+<br>
+<br>
+
+
+## Yellowdig Topic
+
+Post your reflection as a new pin: 
+
+Think back to the lab on creating latent construct measures. 
+
+What is the relationship between a latent construct and a group identified by clustering? 
+
+Do you think the groups that the model found are valid? 
+
+Do you think they are reliable? 
+
+> With those ideas in mind, discuss the strengths and weaknesses of these data-driven approaches to identifying neighborhoods. When do you think they work well, and when do you think they will be misleading? 
+
+---
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+**Post by {{page.yellowdig.post-03}}**
+
+---
 
 <br>
 
@@ -709,48 +717,39 @@ The purpose of Lab 4 is to replicate the work you did for the previous lab, but 
 <br>
 
 
+**Notes on Saving Your Cartogram for Future Use**
+
+You will be re-using your cartogram in future labs. You can create your cartogram from scratch each time, or simply save your cartogram as a geojson map file, and you can re-load it when you need it. 
+
+<a class="uk-button uk-button-default" href="../LABS/save-dorling-cartogram.html">Save Your Cartogram</a>
+
+
+```r
+library( geojsonio )
+
+phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
+geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
+```
+
+Load your cartogram: 
+
+```r
+library( geojsonio )
+library( sp )
+
+# load from github
+github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
+phx <- geojson_read( x=github.url,  what="sp" )
+
+# from local file path
+phx <- geojson_read( "data/phx_dorling.geojson", what="sp" )
+
+plot( phx )
+```
+
+
+
 <!--- 
-
-## Unit Overview
-
-
-**Assigned Reading**
-
-REQUIRED:
-
-> Market Value Analysis: A Data-Based Approach to Understanding Urban Housing Markets. pp 49-59 [ [PDF](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/MVA-DD-App-to-Strengthening-Neighborhoods.pdf) ]
-
-> Delmelle, E. C. (2017). Differentiating pathways of neighborhood change in 50 US metropolitan areas. Environment and planning A, 49(10), 2402-2424. [ [PDF](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/differentiating-pathways-of-neighborhood-change.pdf) ]
-
-We are interesting in understanding neighborhood change. These data-driven approaches to the phenomenon use machine-learning algorithms to "discover" coherent communities within the city by grouping census tracks into groups that minimize within-group differences and maximize between-group differences. 
-
-You can explore one of these algorithms by looking at examples of how botanists might create "species" based upon characteristics of flowers:
-
-[Clustering Example](https://shiny.rstudio.com/gallery/kmeans-example.html)
-
-A data-driven approach to understanding neighborhood change requires use to (1) define "neighborhoods", or groups of census tracks in the data that are very similar, and (2) use those group characteristics at a point in time to predict how the "neighborhood" might change in the future. Both of the papers present variations on Step (1) above.
-
-
-<br>
-<br>
-
-Read the two papers from `Neighborhood Types` section above (Links provided again here: ([ [PDF 1](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/MVA-DD-App-to-Strengthening-Neighborhoods.pdf) ]; [ [PDF 2](https://github.com/DS4PS/paf-586-summer-2019/raw/master/Reading/differentiating-pathways-of-neighborhood-change.pdf) ]), then answer the following questions:
-
-1. **How did each author identify coherent “neighborhoods” (or groups) in each model?**
-2. **Would these "neighborhoods" line up with neighborhoods that are defined on a city's zoning maps (Links to an external site.)?**
-3. **Did the two models use the same data to create the groups?**
-4. **How do the labels and descriptions of the groups differ in each model and why?**
-
-Please copy these questions, along with your answers, at the beginning of your .rmd file used for Lab 4 (See Lab 4 assignment below). 
-
-**Description**
-
-
-*Temkin, K., & Rohe, W. (1996). Neighborhood change and urban policy. Journal of planning education and research, 15(3), 159-170.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/neighborhood-change-and-urban-policy.pdf) ]
-
-*Grigsby, W., Baratz, M., Galster, G., & Maclennan, D. (1987). The dynamic of neighborhood change and decline. Progress in Planning, 28, 1.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/Grigsby-et-al-1983-Dynamics-of-Neighbourhood-Change-and-Decline.pdf) ]
-
-*Schwirian, K. P. (1983). Models of neighborhood change. Annual review of Sociology, 9(1), 83-102.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/models-of-neighborhood-change.pdf) ]
 
 
 <br>
@@ -777,8 +776,6 @@ Chetty's work has brought new insight to the question:
 
 <br>
 <br>
-
-
 
 
 
@@ -823,8 +820,6 @@ Read the tutorial on modeling changes in home value:
 <a class="uk-button uk-button-default" href="../LABS/lab-05-tutorial-v2.html">NHOOD CHANGE TUTORIAL</a>
 
 
-<!---
-
 **Neighborhood Change and Gentrification**
 
 The first video below provides a general overview of neighborhood change and gentrification, including: defintions, debates,  policies, and a case study example.  The lecture notes can be found [here (PDF)](https://github.com/DS4PS/cpp-529-fall-2020/raw/main/lectures/p-05-visual-narrative.pdf).
@@ -835,9 +830,6 @@ The first video below provides a general overview of neighborhood change and gen
 
 <br>
 
-
-
--->
 
 **Visualization**
 
@@ -857,31 +849,16 @@ The video below describes the importance of creating maps that accurately convey
 <a class="uk-button uk-button-default" width="200" href="../choropleth-color-scales/">COLOR SCALE INTUITION</a>
 
 <hr>
-
 <br>
+
+
 
 ## Lab 05
 
 **Instructions**
 
-
 <a class="uk-button uk-button-default" href="../LABS/lab-05-instructions.html">LAB-05 Instructions</a>
 
-<!---
-
-There are 3 parts to this week's lab.  The first two parts are largely a review and a primer of what we've done already and where we are heading.  The Rmarkdown file and HTML file is below.  
-
-
-Access Parts 1 and 2 of Lab 5 here: [RMD](https://github.com/DS4PS/cpp-529-master/raw/master/LABS/Lab5a-MapVis1.Rmd); [HTML](https://github.com/DS4PS/cpp-529-master/raw/master/LABS/Lab5a-MapVis1.html)
-
-After you go through Parts 1 and 2, please download part 3 of the lab, which focuses on using dot density maps to display changes in demographics, in this case with respect to education levels.  There are several questions for you to consider at the bottom of the file that pertain to all parts of the lab.   The Rmarkdown file and HTML file is below.  
-
-Access Part 3 Lab 2 here: [RMD](https://github.com/DS4PS/cpp-529-master/raw/master/LABS/Lab5b-MapVis2.Rmd); [HTML](https://github.com/DS4PS/cpp-529-master/raw/master/LABS/Lab5b-MapVis2.html) 
-
-
-Please submit your .rmd and .html files for Part 3 of the lab only, including your answers to the questions.  
-
--->
 
 **Submit Solutions to Canvas**
 
@@ -893,38 +870,29 @@ After you have completed Lab 05 you can submit it via Canvas using the link belo
 
 
 
-<br>
 
-<!---
+## Yellowdig Topic
 
-Yellowdig Discussion
+Pick one of the following three articles to read: 
 
-<br>
-<br>
+*Temkin, K., & Rohe, W. (1996). Neighborhood change and urban policy. Journal of planning education and research, 15(3), 159-170.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/neighborhood-change-and-urban-policy.pdf) ]
 
-**Required Readings**
+*Grigsby, W., Baratz, M., Galster, G., & Maclennan, D. (1987). The dynamic of neighborhood change and decline. Progress in Planning, 28, 1.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/Grigsby-et-al-1983-Dynamics-of-Neighbourhood-Change-and-Decline.pdf) ]
 
-1. Using Algorithms To Predict Gentrification [(Link)](https://www.citylab.com/solutions/2017/02/algorithms-that-predict-gentrification/516945/)
+*Schwirian, K. P. (1983). Models of neighborhood change. Annual review of Sociology, 9(1), 83-102.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/neighborhood-change-theories/models-of-neighborhood-change.pdf) ]
 
-2. How Machine Learning and AI Can Predict Gentrification [(Link)](https://www.citylab.com/life/2018/12/gentrification-london-ai-machine-learning/578329/)
+Based upon the theory presented in the article, which variables do you think would be more important to include in a model of neighborhood change? 
 
+Do the census variables capture all of the data we would need, according to the article? 
 
+---
 
-**Questions**
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-1. Provide a 2-3 sentence summary of the above two articles (research topic, data, method, findings). 
+**Post by {{page.yellowdig.post-05}}**
 
-2. What are the main variables used to predict gentrification in the above studies? 
+---
 
-3.  What other information would you like to have that you think would be an important predictor of gentrification?
-
--->
-
-
-
-<br> 
---------------------------------------------------------------------------------------------------- 
-<br>
 
 
 
@@ -946,41 +914,13 @@ Yellowdig Discussion
 # Week 6 - Models of Neighborhood Change 
 
 
-## Lab 06
+## Unit Overview
 
-**Instructions**
+This section uses regression analysis to explore how changes in demographic variables influence changes in house prices over time. 
 
-<a class="uk-button uk-button-default" href="../LABS/lab-06-instructions.html">LAB-06 Instructions</a>
+**Regression Review**
 
-
-**Submit Solutions to Canvas**
-
-Upload your RMD and your HTML files to the appropriate lab submission link. 
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
-
-**Due {{page.labs.lab-06}}**
-
-
-
-
-<!---
-
-*** { @unit = "", @title = "Unit Overview", @foldout  }
-
-## Description 
-
-
-In this unit, a set of brief videos are provided to give an introduction and overview of employing model regressions in R.  In the lab, we will then use regression analysis to explore how changes in certain demographic variables influence change in house prices over time. 
-
-The second theme of this unit is to continue working with cluster analysis to classify neighborhoods (at the tract or county level) into groups and provide appropriate labels for those groups based on how the demographic information relates to them.  We will then extent our cluster analysis to predict clusters using the same set of demographic variables for a different time period, and then track how counties (or tracts) transition from one cluster grouping to another over time. 
-
-
-*** { @unit = "", @title = "Regression Overview", @lecture, @foldout  }
-
-This set of videos provide a general overview of Ordinary Least Squares (OLS) model regression.  The lecture notes can be found [here (HTML)](https://ds4ps.org/cpp-529-master/lectures/OLS.html).
-
-<br>
+The notes used in the videos below can be found [here (HTML)](https://ds4ps.org/cpp-529-master/lectures/OLS.html).
 
 ### OLS Introduction
 
@@ -1006,73 +946,47 @@ This set of videos provide a general overview of Ordinary Least Squares (OLS) mo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jPUd5xiVSqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
 
 
+## Lab 06
 
-*** { @unit = "Due Nov 27th", @title = "Lab 06", @assignment, @foldout  }
+**Instructions**
 
-<br>
-<br>
-
-
-
-## Lab Instructions
-
-This will be the last lab for the semester and will serve as the primary foundation for your final city project.  There are two parts to the lab.  
-
-In the first part, you will download census information from the 2008-2012 ACS 5-year estimates and the 2013-2017 ACS 5-year estimates,  calculate change over time for each variable, and then run OLS regression to explore how changes in demographic variables relate to changes in house prices at the county level.  
-
-In the second part, you will perform cluster analysis, as in previous labs, but this time grouping all US counties into unique groups based on variables from the 2013-2017 ACS 5-year estimates.  As before, you will visualize how demographic information relates to each group and provide an appropriate label.  
-
-What's new in this part 2 of the lab is that you will then combine the cluster model output performed for counties during the 2013-2017 period, and `predict` what cluster groups those counties would have been in during the 2008-2012 time period. Next, you will track transitions of counties from one cluster group to another over the 2008-2012 and 2013-2017 time period, and see how those changes relate to house prices.  From here you will attempt to detect which cluster groups gentrified over the time period.   
-
-Access the lab here: [RMD](https://github.com/DS4PS/cpp-529-master/raw/master/LABS/Lab6-RegClustPred.Rmd); [HTML](https://www.dropbox.com/s/ao6dpep5n559sm5/Lab6-RegClustPred.html?dl=1) 
+<a class="uk-button uk-button-default" href="../LABS/lab-06-instructions.html">LAB-06 Instructions</a>
 
 
-Please submit your .rmd and .html files on Canvas, including your answers to the questions.  
+**Submit Solutions to Canvas**
 
-## Submit Solutions to Canvas:
+Upload your RMD and your HTML files to the appropriate lab submission link. 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
-<br>
-<br>
-
-
-
-*** { @unit = "Due Nov 27th", @title = "Yellowdig Discussion Assignment: Predicting Neighborhood Change", @assignment, @foldout  }
-
-<br>
-<br>
-
-### Required Readings
-
-1. Gentrification Has Virtually No Effect on Homeowners [(Link)](https://www.citylab.com/equity/2017/01/gentrification-hurts-renters-more-than-homeowners/510074/)
+**Due {{page.labs.lab-06}}**
 
 
 
 
-### Questions
+## Yellowdig Topic
 
-1.  Summarize the main debate about gentrification and what your stance is after reading the article. 
+You will answer the questions below using the following article:
 
-2. How does the study by Martin and Beck define gentrification?  What are the limits/advantages of using this definition?  
+*Predicting gentrification using longitudinal census data* [(LINK)](http://urbanspatialanalysis.com/portfolio/predicting-gentrification-using-longitudinal-census-data/)
 
-3. How does our approach taken in the lab to identify potential clusters of counties that gentrified compare to Martin and Beck's definition of gentrification?  Is our approach better?  What other variables should we like to include in our cluster anlaysis to better describe gentrified areas?  
+These background articles will be helpful: 
 
+*Using Algorithms To Predict Gentrification* [(LINK)](https://www.citylab.com/solutions/2017/02/algorithms-that-predict-gentrification/516945/)
 
+*How Machine Learning and AI Can Predict Gentrification* [(Link)](https://www.citylab.com/life/2018/12/gentrification-london-ai-machine-learning/578329/)
 
-<br>
---------------------------------------------------------------------------------------------------- 
-<br>
+> Discuss the differences in the types of data that are used in this predictive model versus the type of data that was used in the Differentiating Pathways article. Specifically, which features are "engineered" as part of this gentrification model, and how do the new variables that are created differ from the regular census data we used for the lab? 
 
--->
+---
 
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-<br> 
---------------------------------------------------------------------------------------------------- 
-<br>
+**Post by {{page.yellowdig.post-06}}**
+
+---
 
 
 

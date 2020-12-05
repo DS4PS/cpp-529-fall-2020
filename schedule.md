@@ -1099,6 +1099,29 @@ d2 <- select( d2, - year )
 d <- merge( d1, d2, by="tractid" )
 d <- merge( d, md, by="tractid" )
 
+# STANDARDIZE GEO IDs
+
+# note the current geoid format for the LTDB census data: 
+# FIPS-STATE-COUNTY-TRACT:  fips-01-001-020100  
+
+x <- d$tractid 
+# head( x )
+# [1] "fips-01-001-020100" "fips-01-001-020200" "fips-01-001-020300"
+# [4] "fips-01-001-020400" "fips-01-001-020500" "fips-01-001-020600"
+
+# remove non-numeric strings 
+x <- gsub( "fips", "", x )
+x <- gsub( "-", "", x )
+# head( x )
+# [1] "01001020100" "01001020200" "01001020300" "01001020400" "01001020500"
+# [6] "01001020600"
+
+# drop leading zeros 
+x <- as.numeric( x )
+
+# remember to add the variable back to the census dataset
+d$tractid2 <- x 
+
 phx <- merge( phx, d, by.x="GEOID", by.y="tractid", all.x=T )
 ```
 

@@ -727,7 +727,14 @@ You will be re-using your cartogram in future labs. You can create your cartogra
 ```r
 library( geojsonio )
 
+# data frame and polygon ID standardization in case a tract was dropped and IDs don't match
+row.ids <- sapply( slot( phx_dorling, "polygons" ), function(x) slot( x, "ID" ) )
+row.names( phx_dorling ) <- row.ids
+
+# project to standard lat-lon coordinate system 
 phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
+
+# write to file 
 geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
 ```
 

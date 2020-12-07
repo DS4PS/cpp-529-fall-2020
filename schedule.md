@@ -526,18 +526,22 @@ The data collected by the decennial census are used to determine the number of s
 
 Please post your reflection as a new pin on YellowDig:
 
+--- 
+
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Post by {{page.yellowdig.post-02}}**
 
+---
 
 
-<br>
-<br>
-<hr>
-<br>
-<br>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 

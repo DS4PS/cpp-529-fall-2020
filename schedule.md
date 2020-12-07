@@ -144,10 +144,10 @@ Which program or certificate are you part of? Tell us a little about yourself an
 
 <br>
 <br>
-<hr>
 <br>
 <br>
-
+<br>
+<br>
 
 
 
@@ -310,6 +310,7 @@ MEASUREMENT THEORY
 
 **Lab Instructions:**
 
+<a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
 To get you started, skim the following articles in order to get some background information on the study of neighborhood change (decline or revitalization after decline). These studies will help you think about ways in which you might measure neighborhood vitality. 
 
@@ -321,7 +322,6 @@ IMPACT OF NEIGHBORHOODS ON FAMILIES
 
 Your task on Lab 01 will be to create a new **measure of neighborhood health** by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
 
-<a class="uk-button uk-button-default" href="../lab-01-instructions/">LAB-01 Instructions</a>
 
 <hr>
 

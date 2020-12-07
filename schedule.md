@@ -586,6 +586,8 @@ For any given number of groups that you desire the algorithm will identify how t
 
 **PART 01**: Labeling Phoenix Neighborhood Types
 
+<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Code-Through</a>
+
 Once you have replicated the steps of the tutorial, you will have assigned Phoenix census tracts into 8 unique groups.  
 
 You are now ready for the fun part -- giving a label to each group. To do this, you need to visually inspect which census variables are prominent in each group and make an informed opinion about what type of label to apply.  
@@ -593,6 +595,23 @@ You are now ready for the fun part -- giving a label to each group. To do this, 
 Labels should be informative. There will always be a trade-off between precision labels (literal and dry but unambiguous) and colorful labels (metaphors, playful, easy to remember). Your task is to create a set of labels that balances these two considerations without offending anyone with stereotypes (please be respectful). 
 
 > Propose labels for Groups 1-8 constructed during Lab 3 using cluster analysis **Image 1** below.  In order to provide an appropriate label, you must do a careful inspection of how the census variables overall relate to a particular group **Image 2**. A good label will be catchy and descriptive of the population within the neighborhood cluster.
+
+<br>
+
+Image 1:
+
+![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
+
+<br> 
+
+Image 2:
+
+![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
+
+<br>
+<br>
+
+
 
 **PART 02**: Other Neighborhood Cluster Models
 
@@ -608,44 +627,21 @@ A data-driven approach to understanding neighborhood change requires use to (1) 
 
 Read the two papers then answer the following questions:
 
-
 1. **What type of data was used for clustering in the MVA paper (paper 1)? What do the variables measure, and how many were used?**
 2. **What type of data was used for clustering in the Differentiating Pathways paper (paper 2)? What do the variables measure, and how many were used?**
 3. **Table 1 in Differentiating Pathways (page 2412) is equivalent to the tables you used for PART 01 above except it uses a colored table instead of a chart. Can you identify one neighborhood type from this model that is similar to a neighborhood type that you labeled above?**
 
-
-
 **Write up your responses in a word document. There is no code component of the assignment this week**
 
 *Reminder:* Name your file according to the convention: Lab-##-LastName.xxx
+
+You do not need to include your RMD/HTML file for this step with your solutions. You will replicate these steps next week, though, as part of the lab.  
 
 ---
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 **Due {{page.labs.lab-03}}**
-
----
-
-
-<br>
-
-Image 1:
-
-![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-13-1.png)
-
-<br> 
-
-Image 2:
-
-![](../LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-22-1.png)
-
-<br>
-
-
-<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Code-Through</a>
-
-You do not need to include your RMD/HTML file for this step with your solutions. You will replicate these steps next week, though, as part of the lab.  
 
 ---
 
@@ -678,7 +674,6 @@ Do you think they are reliable?
 <br>
 <br>
 <br>
-<hr>
 <br>
 <br>
 

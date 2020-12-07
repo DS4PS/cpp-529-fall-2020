@@ -129,6 +129,21 @@ All three articles share a common approach of using census data and clustering t
 
 <br>
 <br>
+
+## YellowDig Topic 
+
+Introduce yourself to the class via YellowDig. 
+
+Which program or certificate are you part of? Tell us a little about yourself and your career interests in evaluation and analytics. 
+
+--- 
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+--- 
+
+<br>
+<br>
 <hr>
 <br>
 <br>
@@ -339,20 +354,40 @@ Or the "Reliability" section of:
 
 ## YellowDig Topic 
 
-Introduce yourself to the class via YellowDig. 
+Consider the "toxic neighborhood environment" scale developed by Manduca and Sampson:
 
-Which program or certificate are you part of? Tell us a little about yourself and your career interests in evaluation and analytics. 
+*Manduca, R., & Sampson, R. J. (2019). Punishing and toxic neighborhood environments independently predict the intergenerational social mobility of black and white children. Proceedings of the National Academy of Sciences, 116(16), 7772-7777.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/social-mobility/toxic-neighborhoods-and-social-mobility.pdf) ]
 
+--- 
+
+*We use data on intergenerational social mobility by neighborhood to examine how social and physical environments beyond concentrated
+poverty predict children’s long-term well-being. First, we examine neighborhoods that are harsh on children’s development: those characterized by high levels of violence, incarceration, and lead exposure....*
+
+*Our explanatory variables are constructed from:*
+
+* *the Community Survey of the PHDCN, which interviewed a representative sample of Chicago residents about their neighborhood social environments in 1995 and 2002 (combined N of ∼12,000);* 
+* *violent crime rates per 100,000 population from 1995 to 2000, derived from offenses reported by citizens to the police; incarceration rates per population from 1995 to 2000, derived from prison admission data;* 
+* *and lead exposure among children from 1995 to 1997, derived from more than 150,000 blood-level tests conducted by Chicago’s health department.* 
+
+Answer the following question on YellowDig: 
+
+1. Propose one variable not currently included in the metric that you believe would predict low social mobility for children in a neighborhood. Try to suggest variables that have not already been suggested by classmates, and explain why you think they would predict low social mobility.  
+2. When constructing indices it's possible to include measures that predict the opposite of the index. When entering them into the measure you would just change the sign. For example, asking people questions about the presence of things that make them happy might elicit different responses than asking them about the presence of things that make them unhappy. They could be combined by flipping the sign of one item. In this case, can you think of a variable that would predict high social mobility in a neighborhood, that could be added to the measure in this way?  
+3. Do you think that all of these factors should have an equal weight in the final metric? Or would one of these be more important than others? How much more iportant? What are your thoughts?  
+
+---
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Post by {{page.yellowdig.post-01}}**
+---
+
 
 <br>
 <br>
-<hr>
 <br>
 <br>
-
+<br>
+<br>
 
 
 

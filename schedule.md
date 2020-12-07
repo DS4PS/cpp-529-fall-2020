@@ -675,6 +675,11 @@ Do you think they are reliable?
 ---
 
 <br>
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 
 
@@ -790,6 +795,13 @@ Chetty's work has brought new insight to the question:
 ***Reminder:*** Include the four questions, along with your answers from the reading assignment (see above) at the beginning of your RMD file. 
 
 -->
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 
 

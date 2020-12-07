@@ -164,9 +164,13 @@ For easy reference, you have the following due dates this term:
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
 
-## YellowDig Topic 
+
+# Introduce Yourself   
 
 Introduce yourself to the class via YellowDig. 
 
@@ -176,7 +180,7 @@ Which program or certificate are you part of? Tell us a little about yourself an
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-**Post by {{page.yellowdig.post-01}}**
+**Post by {{page.yellowdig.post-00}}**
 
 --- 
 

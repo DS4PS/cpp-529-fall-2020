@@ -845,6 +845,14 @@ The first video below provides a general overview of neighborhood change and gen
 
 **Visualization**
 
+---
+
+<a class="uk-button uk-button-default" width="200" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
+
+<a class="uk-button uk-button-default" width="200" href="../choropleth-color-scales/">COLOR SCALE INTUITION</a>
+
+---
+
 The video below describes the importance of creating maps that accurately conveys spatial information contained in the underlying data.  Far too often, maps are used incorrectly to advocate a certain narrative that does not accurately reflect underlying data.  As data scientists, it is important that we are careful of how we map spatial information.  The lecture notes can be found [here (PDF)]({{ page.pdf-root-url }}p-05-visual-narrative.pdf).
 
 
@@ -853,15 +861,12 @@ The video below describes the importance of creating maps that accurately convey
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AWwOYNvxK-A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+
 <br>
-<hr>
-
-<a class="uk-button uk-button-default" width="200" href="../LABS/lab-05-choropleth-tutorial.html">CHOROPLETH TUTORIAL</a>
-
-<a class="uk-button uk-button-default" width="200" href="../choropleth-color-scales/">COLOR SCALE INTUITION</a>
-
-<hr>
 <br>
+<br>
+
+
 
 
 
@@ -967,6 +972,11 @@ The notes used in the videos below can be found [here (HTML)](https://ds4ps.org/
 ### OLS Example using Crime Data
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jPUd5xiVSqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<br>
+<br>
+<br>
 
 
 

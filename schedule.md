@@ -8,6 +8,7 @@ canvas:
 yellowdig_url: 'https://canvas.asu.edu/courses/70103/assignments/1721212'
 
 yellowdig: 
+  post-00: 'Saturday, Oct 10th'
   post-01: 'Saturday, Oct 17th'
   post-02: 'Saturday, Oct 24th'
   post-03: 'Monday, Nov 2nd' 
@@ -119,16 +120,51 @@ All three articles share a common approach of using census data and clustering t
 
 ![](assets/img/strong-transitional-distressed-hoods.png) 
 
-
 <br>
 
 ## Course Structure
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l1LMI1mMwe4?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
+
+
+
+## Due Dates 
+
+For easy reference, you have the following due dates this term: 
+
+**YellowDig Posts:**
+
+* {{page.yellowdig.post-00}}  
+* {{page.yellowdig.post-01}} 
+* {{page.yellowdig.post-02}} 
+* {{page.yellowdig.post-03}} 
+* {{page.yellowdig.post-04}} 
+* {{page.yellowdig.post-05}} 
+* {{page.yellowdig.post-06}} 
+* {{page.yellowdig.post-07}} 
+
+
+**Labs:** 
+
+* {{page.labs.lab-01}} 
+* {{page.labs.lab-02}} 
+* {{page.labs.lab-03}} 
+* {{page.labs.lab-04}} 
+* {{page.labs.lab-05}} 
+* {{page.labs.lab-06}} 
+
+
+**Projects:**
+
+* Code Through: {{page.projects.code-through}}  
+* Final Project (Nhood Change Dashboard): {{page.projects.dashboard}} 
 
 <br>
 <br>
+<br>
+
 
 ## YellowDig Topic 
 
@@ -139,6 +175,8 @@ Which program or certificate are you part of? Tell us a little about yourself an
 --- 
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+**Post by {{page.yellowdig.post-01}}**
 
 --- 
 
@@ -225,9 +263,7 @@ On your lab you will be practicing with index development using census data and 
 
 
 
-## Assigned Reading
-
-**Required:**
+**Assigned Reading**
 
 Schäffer, U. (2007). Management accounting & control scales handbook. Springer Science & Business Media. [ [2-page PDF](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/introduction-to-construct-measurement.pdf) ] 
 
@@ -323,13 +359,13 @@ IMPACT OF NEIGHBORHOODS ON FAMILIES
 Your task on Lab 01 will be to create a new **measure of neighborhood health** by identifying several Census variables that can be added together to produce a reliable index (alpha>0.6). 
 
 
-<hr>
-
-**Due on {{page.labs.lab-01}}**
+---
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
-<hr>
+**Due on {{page.labs.lab-01}}**
+
+---
 
 The lab uses a custom shiny app and does not require coding. But if you are interested in the behind-the-scenes mechanics see: 
 
@@ -421,7 +457,7 @@ In general, data scientists using R often run into two problems related to this 
 
 This unit will teach students how to resolve both problems, as well as learn mapping tools to effectively transform raw census data into visually appealing choropleth (i.e. color-coded) maps.   This unit includes 4 videos: (1) introduction to Census and Census data; (2) Introduction to Mapping; (3) Mapping Census Data in R; and (4) Mapping Census Data in R with TidyCensus. 
 
-## Assigned Reading
+**Assigned Reading**
 
 REQUIRED:
 
@@ -575,7 +611,7 @@ A data-driven approach to understanding neighborhood change requires use to (1) 
 
 Later on we will see how we might use group membership to make predictions with the data. For example, can a city forecast how it's current neighborhoods are likely to change over the next decade? Does the current group status of a community give us reliable information about how it might change over time? These sorts of insights can help with urban planning processes. 
 
-## Assigned Reading 
+**Assigned Reading** 
 
 Skim the article - you are not expected to understand all of the technical details. Instead, focus on the general framework of identifying groups then using group membership to forecast how neighborhoods are likely to change in the future. 
 
@@ -986,27 +1022,27 @@ This section uses regression analysis to explore how changes in demographic vari
 
 The notes used in the videos below can be found [here (HTML)](https://ds4ps.org/cpp-529-master/lectures/OLS.html).
 
-### OLS Introduction
+**OLS Introduction**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3nQrCvJun-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-### OLS Graphical Example 
+**OLS Graphical Example** 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o9VrJtKScE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-### OLS Assumptions
+**OLS Assumptions**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/laq6rDlq6S4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-### Manual OLS with Matrix Algebra
+**Manual OLS with Matrix Algebra**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2BN_23cFh2E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-### OLS Example using Crime Data
+**OLS Example using Crime Data**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jPUd5xiVSqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

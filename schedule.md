@@ -373,12 +373,14 @@ Answer the following question on YellowDig:
 
 1. Propose one variable not currently included in the metric that you believe would predict low social mobility for children in a neighborhood. Try to suggest variables that have not already been suggested by classmates, and explain why you think they would predict low social mobility.  
 2. When constructing indices it's possible to include measures that predict the opposite of the index. When entering them into the measure you would just change the sign. For example, asking people questions about the presence of things that make them happy might elicit different responses than asking them about the presence of things that make them unhappy. They could be combined by flipping the sign of one item. In this case, can you think of a variable that would predict high social mobility in a neighborhood, that could be added to the measure in this way?  
-3. Do you think that all of these factors should have an equal weight in the final metric? Or would one of these be more important than others? How much more iportant? What are your thoughts?  
+3. Do you think that all of these factors should have an equal weight in the final metric? Or would one of these be more important than others? How much more important (how much would you weight it relative to others)? Share your thoughts.  
 
 ---
+
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Post by {{page.yellowdig.post-01}}**
+
 ---
 
 

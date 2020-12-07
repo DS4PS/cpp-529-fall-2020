@@ -614,7 +614,19 @@ Read the two papers then answer the following questions:
 3. **Table 1 in Differentiating Pathways (page 2412) is equivalent to the tables you used for PART 01 above except it uses a colored table instead of a chart. Can you identify one neighborhood type from this model that is similar to a neighborhood type that you labeled above?**
 
 
-**Write up your responses in a word document and submit via Canvas.**
+
+**Write up your responses in a word document. There is no code component of the assignment this week**
+
+*Reminder:* Name your file according to the convention: Lab-##-LastName.xxx
+
+---
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+**Due {{page.labs.lab-03}}**
+
+---
+
 
 <br>
 
@@ -631,20 +643,9 @@ Image 2:
 <br>
 
 
+<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Code-Through</a>
 
-
-<a class="uk-button uk-button-default" href="../LABS/lab-03-tutorial.html">LAB-03 Instructions</a>
-
-
-After you have completed Lab 3 you can submit it via Canvas using the link below. You do not need to include your RMD/HTML file for this step. 
-
-*Reminder:* Name your file according to the convention: Lab-##-LastName.xxx
-
----
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
-
-**Due {{page.labs.lab-03}}**
+You do not need to include your RMD/HTML file for this step with your solutions. You will replicate these steps next week, though, as part of the lab.  
 
 ---
 
@@ -712,15 +713,15 @@ The purpose of Lab 4 is to replicate the work you did for the previous lab, but 
 
 **Submit Solutions to Canvas**
 
+---
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 **Due {{page.labs.lab-04}}**
 
-<br>
+---
 
---------------------------------------------------------------------------------------------------- 
 <br>
-
 
 **Notes on Saving Your Cartogram for Future Use**
 
@@ -799,10 +800,9 @@ Chetty's work has brought new insight to the question:
 
 <br>
 <br>
-<hr>
 <br>
 <br>
-
+<br>
 
 
 
@@ -818,8 +818,6 @@ Chetty's work has brought new insight to the question:
 
 
 # Week 5 - Visualizing Neighborhood Changes  
-
-
 
 
 ## Unit Overview
@@ -883,11 +881,16 @@ The video below describes the importance of creating maps that accurately convey
 
 After you have completed Lab 05 you can submit it via Canvas using the link below.  Upload your RMD and your HTML files to the appropriate lab submission link. 
 
+---
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 **Due {{page.labs.lab-05}}**
 
+---
 
+<br>
+<br>
 
 
 ## Yellowdig Topic
@@ -912,7 +915,12 @@ Do the census variables capture all of the data we would need, according to the 
 
 ---
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
@@ -978,9 +986,15 @@ The notes used in the videos below can be found [here (HTML)](https://ds4ps.org/
 
 Upload your RMD and your HTML files to the appropriate lab submission link. 
 
+<hr>
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 **Due {{page.labs.lab-06}}**
+
+<hr>
+<br>
+<br>
 
 
 
@@ -1011,7 +1025,6 @@ These background articles will be helpful:
 <br>
 <br>
 <br>
-<hr>
 <br>
 <br>
 

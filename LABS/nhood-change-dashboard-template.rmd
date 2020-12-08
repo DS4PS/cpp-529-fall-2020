@@ -2,11 +2,13 @@
 title: "Models of Neighborhood Change in YOUR CITY NAME"
 output: 
   flexdashboard::flex_dashboard:
+    theme: bootstrap
     source: embed
     smart: false
 runtime: shiny
 ---
 
+    
 
 ```{r global, echo=F}
 
@@ -42,6 +44,7 @@ library( sp )
 library( sf )
 library( tmap )
 library( pals )
+library( rgdal )
 
 ```
 
@@ -66,6 +69,7 @@ phx.sf <- st_as_sf( phx2 )
 
 # separate out the data frame from the map
 d <- as.data.frame( phx.sf )
+
 
 
 ```
@@ -295,15 +299,15 @@ renderPlot({
 # x <-  d[ "pnhwht12" ] %>% unlist()
 
   
-get_variable_x <- reactive({ d[ input$home.values ] })
+get_variable_x <- reactive({ d[ input$home.value ] })
 
-x <- get_variable_x() %>% unlist()
+x <- get_variable_x() %>% unlist() %>% as.numeric()
 
 cut.points <- quantile( x, seq( 0, 1, 0.1 ) )
 
 hist( x, breaks=50, 
       col="gray", border="white", yaxt="n",
-      main=paste0( "Histogram of ", toupper( input$home.values ) ),
+      main=paste0( "Histogram of ", toupper( input$home.value ) ),
       xlab="red lines represent decile cut points" )
 
 abline( v=cut.points, col="darkred", lty=3, lwd=2 )

@@ -219,8 +219,7 @@ tmap_mode("view")
 tm_basemap( "CartoDB.Positron" )
 tm_shape( phx2, bbox=bb ) + 
   tm_polygons( col="cluster", palette="Accent",
-               title="Community Types" )
-
+               title="Community Types" ) 
 
 })
 ```

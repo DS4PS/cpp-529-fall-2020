@@ -1257,8 +1257,15 @@ Saving the cartogram will simplify the data steps needed for your final dashboar
 ```r
 library( geojsonio )
 
-phx <- spTransform( phx, CRS("+proj=longlat +datum=WGS84") )
-geojson_write( phx, file="phx_dorling.geojson", geometry="polygon" )
+# data frame and polygon ID standardization in case a tract was dropped and IDs don't match
+row.ids <- sapply( slot( phx_dorling, "polygons" ), function(x) slot( x, "ID" ) )
+row.names( phx_dorling ) <- row.ids
+
+# project to standard lat-lon coordinate system 
+phx_dorling <- spTransform( phx_dorling, CRS("+proj=longlat +datum=WGS84") )
+
+# write to file 
+geojson_write( phx_dorling, file="phx_dorling.geojson", geometry="polygon" )
 ```
 
 Load your cartogram: 

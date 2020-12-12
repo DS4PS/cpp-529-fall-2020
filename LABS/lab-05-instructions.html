@@ -1725,12 +1725,18 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#part-1---data">Part 1 - Data</a></li>
-<li><a href="#part-2---predict-mhv-change">Part 2 - Predict MHV Change</a></li>
-<li><a href="#part-3---distribution-of-home-values-in-your-city">Part 3 - Distribution of Home Values in Your City</a></li>
-<li><a href="#submission-instructions">Submission Instructions</a><ul>
-<li><a href="#notes-on-knitting">Notes on Knitting</a></li>
+<li><a href="#data-steps">Data Steps</a></li>
+<li><a href="#lab-instructions">Lab Instructions</a><ul>
+<li><a href="#part-01---select-three-ivs">Part 01 - Select Three IVs</a></li>
+<li><a href="#part-02---variable-skew">Part 02 - Variable Skew</a></li>
+<li><a href="#part-03---multicollinearity">Part 03 - Multicollinearity</a></li>
+<li><a href="#part-04---is-the-relationship-linear">Part 04 - Is the Relationship Linear?</a></li>
+<li><a href="#part-04---descriptives">Part 04 - Descriptives</a></li>
+<li><a href="#part-05---models">Part 05 - Models</a></li>
+<li><a href="#part-06---effect-sizes">Part 06 - Effect Sizes</a></li>
 </ul></li>
+<li><a href="#bonus-maps">BONUS MAPS</a></li>
+<li><a href="#submission-instructions">Submission Instructions</a></li>
 </ul>
 </div>
 
@@ -1738,8 +1744,8 @@ summary {
 <hr />
 <p><br></p>
 <p>This lab is designed to help you build a baseline model of neighborhood change.</p>
-<div id="part-1---data" class="section level1">
-<h1>Part 1 - Data</h1>
+<div id="data-steps" class="section level1">
+<h1>Data Steps</h1>
 <p>Follow the steps from the tutorial to create a dataset that includes 2000 and 2010 census variables and make sure to:</p>
 <ul>
 <li>Drop all rural census tracts.</li>
@@ -1750,45 +1756,140 @@ summary {
 <p>Print summary statistics about median home values in 2000 and 2010.</p>
 <p>Visualize the distribution of changes across all urban tracts between 2000 and 2010 (these are replications of steps in the tutorial as well).</p>
 </div>
-<div id="part-2---predict-mhv-change" class="section level1">
-<h1>Part 2 - Predict MHV Change</h1>
+<div id="lab-instructions" class="section level1">
+<h1>Lab Instructions</h1>
+<p><strong>Predicting MHV Change 2000-2010</strong></p>
+<div id="part-01---select-three-ivs" class="section level2">
+<h2>Part 01 - Select Three IVs</h2>
 <p>Select three neighborhood characteristics from 2000 that you feel will be good predictors of change in MHV between 2000 and 2010. Note these are static snapshots of the tracts in 2000.</p>
-<p>Explain why you selected the three variables and your theory about how they should related to home value changes.</p>
-<p>Check for variable skew on each of the variables by generating a histogram and summary statistics. Correct skew if necessary.</p>
-<p>Create a correlation plot for your three variables. Are any of them highly-correlated? Do you expect multicollinearity to be a problem?</p>
-<p>Run two models - one with change in median home value (dollar amount) and one with median home value growth (percent change) from 2000 to 2010 as the dependent variables, and include your three year 2000 tract descriptors as covariates.</p>
-<p>What are the results? Did any of the variables predict changes to home value?</p>
-<p>Explain your findings to a general audience.</p>
+<p>Explain why you selected the three variables and your theory about how they should related to home value changes (the predicted sign of relationships in the regression model).</p>
+<p>White a very simple hypothesis for each variable:</p>
+<ul>
+<li>Var X: Higher levels of X in 2000 will predict a larger increase in home value between 2000 and 2010.</li>
+</ul>
 </div>
-<div id="part-3---distribution-of-home-values-in-your-city" class="section level1">
-<h1>Part 3 - Distribution of Home Values in Your City</h1>
-<p><strong>BONUS QUESTION:</strong></p>
+<div id="part-02---variable-skew" class="section level2">
+<h2>Part 02 - Variable Skew</h2>
+<p>Check for variable skew on each of the variables by generating a histogram and summary statistics.</p>
+<p>Correct skew if necessary and explain how you did so (which transformation used our outliers suppressed).</p>
+</div>
+<div id="part-03---multicollinearity" class="section level2">
+<h2>Part 03 - Multicollinearity</h2>
+<p>Do you expect multicollinearity to be a problem?</p>
+<p>Explain the problem of multicollinearity in plain language, and it’s effect on the regression model when present.</p>
+<p>Create a correlation plot for your three variables. Are any of them highly-correlated?</p>
+</div>
+<div id="part-04---is-the-relationship-linear" class="section level2">
+<h2>Part 04 - Is the Relationship Linear?</h2>
+<p>Do you think the relationship between X and Y is a linear relationship, or do you have evidence that the slope changes depending upon the level of X?</p>
+<p>Create a scatterplot of each X and Y overplotted with a lowess regression line and report if you find evidence of non-linearity.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># custom scatterplot with a lowess line</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>jplot &lt;-<span class="st"> </span><span class="cf">function</span>( x1, x2, <span class="dt">lab1=</span><span class="st">&quot;&quot;</span>, <span class="dt">lab2=</span><span class="st">&quot;&quot;</span>, <span class="dt">draw.line=</span>T, ... )</span>
+<span id="cb1-3"><a href="#cb1-3"></a>{</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="kw">plot</span>( x1, x2,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>          <span class="dt">pch=</span><span class="dv">19</span>, </span>
+<span id="cb1-7"><a href="#cb1-7"></a>          <span class="dt">col=</span><span class="kw">gray</span>(<span class="fl">0.6</span>, <span class="dt">alpha =</span> <span class="fl">0.2</span>), </span>
+<span id="cb1-8"><a href="#cb1-8"></a>          <span class="dt">cex=</span><span class="fl">0.5</span>,  </span>
+<span id="cb1-9"><a href="#cb1-9"></a>          <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>          <span class="dt">xlab=</span>lab1, </span>
+<span id="cb1-11"><a href="#cb1-11"></a>          <span class="dt">ylab=</span>lab2, <span class="dt">cex.lab=</span><span class="fl">1.5</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>        ... )</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a>    <span class="cf">if</span>( draw.line<span class="op">==</span>T ){ </span>
+<span id="cb1-15"><a href="#cb1-15"></a>        ok &lt;-<span class="st"> </span><span class="kw">is.finite</span>(x1) <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.finite</span>(x2)</span>
+<span id="cb1-16"><a href="#cb1-16"></a>        <span class="kw">lines</span>( <span class="kw">lowess</span>(x2[ok]<span class="op">~</span>x1[ok]), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">3</span> ) }</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>}</span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="kw">jplot</span>( cars<span class="op">$</span>speed, cars<span class="op">$</span>dist, <span class="dt">lab1=</span><span class="st">&quot;speed&quot;</span>, <span class="dt">lab2=</span><span class="st">&quot;distance&quot;</span> )</span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+<p>If you think the relationship may be non-linear, create a quadratic term for X and include it in the model.</p>
+</div>
+<div id="part-04---descriptives" class="section level2">
+<h2>Part 04 - Descriptives</h2>
+<p>Report a table of descriptive statistics for home values (2000 values, 2010 values, 2000-2010 change in values, 2000-2010 growth rates) and your three covariates. Include:</p>
+<ul>
+<li>min</li>
+<li>25th percentile</li>
+<li>median</li>
+<li>mean</li>
+<li>75th percentile</li>
+<li>max</li>
+</ul>
+</div>
+<div id="part-05---models" class="section level2">
+<h2>Part 05 - Models</h2>
+<p>Run two models -</p>
+<ul>
+<li>one with change in median home value (dollar amount) as the DV</li>
+<li>one with median home value growth (percent change from 2000 to 2010) as the DV</li>
+</ul>
+<p>Include your three variables in both models, after any transformations.</p>
+<p>What are the results?</p>
+<ul>
+<li>Did any of the variables predict changes to home value in a meaningful way (relationship is statistically significant)?</li>
+<li>Which variable had the largest impact?</li>
+<li>Did the results match your predictions?</li>
+</ul>
+<p>In a short paragraph explain your findings to a general audience.</p>
+</div>
+<div id="part-06---effect-sizes" class="section level2">
+<h2>Part 06 - Effect Sizes</h2>
+<p>Calculate the effect size associated with each variable.</p>
+<p>Report the relative importance of each factor in predicting the outcome.</p>
+<p>You can calculate effect size as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>m &lt;-<span class="st"> </span><span class="kw">lm</span>( y <span class="op">~</span><span class="st"> </span>x )</span>
+<span id="cb2-2"><a href="#cb2-2"></a>x<span class="fl">.75</span> &lt;-<span class="st"> </span><span class="kw">quantile</span>( x, <span class="dt">p=</span><span class="fl">0.75</span> )</span>
+<span id="cb2-3"><a href="#cb2-3"></a>x<span class="fl">.25</span> &lt;-<span class="st"> </span><span class="kw">quantile</span>( x, <span class="dt">p=</span><span class="fl">0.25</span> )</span>
+<span id="cb2-4"><a href="#cb2-4"></a>beta.x &lt;-<span class="st"> </span>m<span class="op">$</span>coefficients[<span class="dv">2</span>]  <span class="co"># position of x in the model </span></span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a>effect.size.x &lt;-<span class="st"> </span>( x<span class="fl">.75</span> <span class="op">-</span><span class="st"> </span>x<span class="fl">.25</span> ) <span class="op">*</span><span class="st"> </span>beta.x </span></code></pre></div>
+<p>Coefficient sizes are often misleading because a one-unit change of X1 might be very different from a one-unit change in X2. For example if X1 is a proportion and X2 is measured in millions of dollars, then a one-unit change in X1 is the entire range of X1, whereas a one-unit change in X2 would represent a trivial amount.</p>
+<p>As a result, B1 (the coefficient associated with X1) would be relatively large and B2 (the coefficient associated with X2) would be relatively small.</p>
+<p>In order to compare the effects of X1 and X2 on the outcome we need to translate the results into a standardized format. Instead of using the arbitary one-unit scale, we ask how much does the outcome change when we observe at a <strong>large change</strong> in each IV.</p>
+<p>In this case we are using an increase in each X from it’s 25th to 75th percentile to represent a <strong>large change</strong>.</p>
+<p>Since the range of 25th to 75th percentiles are consistent across all IVs we can now compare their effect sizes since they are all in comparable scales.</p>
+<ul>
+<li><em>INTERPRETATION OF B:</em> A <strong>one-unit</strong> change in X results in a <strong>B</strong> change in Y.</li>
+<li><em>INTERPRETATION OF EFFECT SIZE:</em> A <strong>large</strong> change in X results in an <strong>effect size</strong> change in Y.</li>
+</ul>
+<p>Where <strong>large</strong> is consistently operationalized as X.75 - X.25 for each variable.</p>
+<p>It is really important to note that when trying to establish the relative importance of variables the <em>B</em> coefficients in a regression are <strong>NOT</strong> comparable. Effect sizes associated with each X <strong>are</strong> comparable.</p>
+<br>
+<hr>
+<p><br></p>
+</div>
+</div>
+<div id="bonus-maps" class="section level1">
+<h1>BONUS MAPS</h1>
+<p><strong>Spatial Distribution of Home Values in Your City</strong></p>
 <p>This step will not be graded this week.</p>
 <p>However, you will need to complete it for your final project, so make your life easier by doing it now and receiving feedback.</p>
 <p>Load the dorling cartogram for your selected city.</p>
 <p>Merge the current census dataset to your dorling shapefile.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># geoid-01 is the hypothetical name of tract ID in the shapefile</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># geoid-02 is the hypothetical name of tract ID in the census dataset</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># dorling must be an sp shapefile </span></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>d &lt;-<span class="st"> </span><span class="kw">merge</span>( dorling, census, <span class="dt">by.x=</span><span class="st">&quot;geoid-01&quot;</span>, <span class="dt">by.y=</span><span class="st">&quot;geoid-02&quot;</span>, <span class="dt">all.x=</span><span class="ot">TRUE</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># geoid-01 is the hypothetical name of tract ID in the shapefile</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># geoid-02 is the hypothetical name of tract ID in the census dataset</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># dorling must be an sp shapefile </span></span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>d &lt;-<span class="st"> </span><span class="kw">merge</span>( dorling, census, <span class="dt">by.x=</span><span class="st">&quot;geoid-01&quot;</span>, <span class="dt">by.y=</span><span class="st">&quot;geoid-02&quot;</span>, <span class="dt">all.x=</span><span class="ot">TRUE</span> )</span></code></pre></div>
 <p>You may have to convert tract GEOIDs so they follow the same format (all numbers):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>x &lt;-<span class="st"> </span>d<span class="op">$</span>tractid </span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">head</span>( x )</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># [1] &quot;fips-01-001-020100&quot; &quot;fips-01-001-020200&quot; &quot;fips-01-001-020300&quot;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># [4] &quot;fips-01-001-020400&quot; &quot;fips-01-001-020500&quot; &quot;fips-01-001-020600&quot;</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>( <span class="st">&quot;fips&quot;</span>, <span class="st">&quot;&quot;</span>, x )</span>
-<span id="cb2-7"><a href="#cb2-7"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>( <span class="st">&quot;-&quot;</span>, <span class="st">&quot;&quot;</span>, x )</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">head</span>( x )</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># [1] &quot;01001020100&quot; &quot;01001020200&quot; &quot;01001020300&quot; &quot;01001020400&quot; &quot;01001020500&quot;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># [6] &quot;01001020600&quot;</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>( x )</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co"># remember to add the variable back to the dataset</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>d<span class="op">$</span>tractid2 &lt;-<span class="st"> </span>x </span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x &lt;-<span class="st"> </span>d<span class="op">$</span>tractid </span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">head</span>( x )</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># [1] &quot;fips-01-001-020100&quot; &quot;fips-01-001-020200&quot; &quot;fips-01-001-020300&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># [4] &quot;fips-01-001-020400&quot; &quot;fips-01-001-020500&quot; &quot;fips-01-001-020600&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>( <span class="st">&quot;fips&quot;</span>, <span class="st">&quot;&quot;</span>, x )</span>
+<span id="cb4-7"><a href="#cb4-7"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>( <span class="st">&quot;-&quot;</span>, <span class="st">&quot;&quot;</span>, x )</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">head</span>( x )</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co"># [1] &quot;01001020100&quot; &quot;01001020200&quot; &quot;01001020300&quot; &quot;01001020400&quot; &quot;01001020500&quot;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># [6] &quot;01001020600&quot;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>( x )</span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># remember to add the variable back to the dataset</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>d<span class="op">$</span>tractid2 &lt;-<span class="st"> </span>x </span></code></pre></div>
 <p>Create three choropleth maps:</p>
 <ol style="list-style-type: decimal">
 <li>Home values in 2000</li>
@@ -1818,8 +1919,7 @@ summary {
 <p>See <a href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a> for examples.</p>
 <hr />
 <p><br></p>
-<div id="notes-on-knitting" class="section level2">
-<h2>Notes on Knitting</h2>
+<p><strong>Notes on Knitting</strong></p>
 <p>If you are having problems with your RMD file, visit the <a href="https://ds4ps.org/cpp-526-spr-2020/labs/r-markdown-files.html"><strong>RMD File Styles and Knitting Tips</strong></a> manual.</p>
 <p>Note that when you knit a file, it starts from a blank slate. You might have packages loaded or datasets active on your local machine, so you can run code chunks fine. But when you knit you might get errors that functions cannot be located or datasets don’t exist. Be sure that you have included chunks to load these in your RMD file.</p>
 <p>Your RMD file will not knit if you have errors in your code. If you get stuck on a question, just add <code>eval=F</code> to the code chunk and it will be ignored when you knit your file. That way I can give you credit for attempting the question and provide guidance on fixing the problem.</p>
@@ -1835,7 +1935,6 @@ blockquote {
 }
 
 </style>
-</div>
 </div>
 
 <div class="footer">
